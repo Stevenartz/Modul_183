@@ -1,7 +1,7 @@
 # Modul_183
 
 # Contributors
-Author: Master George
+
 <table>
     <tr>
         <td align="center"><a href="https://github.com/Stevenartz"><img
