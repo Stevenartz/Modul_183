@@ -8,7 +8,6 @@ public class M183Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(M183Application.class, args);
-		System.out.println(">>> Test");
 	}
 
 }
