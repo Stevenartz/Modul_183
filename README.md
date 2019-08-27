@@ -1,7 +1,7 @@
 # Modul_183
 
 # Contributors
-
+Author: Master George
 <table>
     <tr>
         <td align="center"><a href="https://github.com/Stevenartz"><img
@@ -10,6 +10,3 @@
     </tr>
 </table>
 
-## [License](https://github.com/Stevenartz/dropshipping-store/blob/master/LICENSE.md)
-
-MIT © [Stefan Ulrich](https://github.com/Stevenartz)
