@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.uls.hello"})
+@ComponentScan(basePackages = {"com.uls.person"})
 public class M183Application {
 
 	public static void main(String[] args) {
