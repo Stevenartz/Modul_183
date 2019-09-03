@@ -18,6 +18,10 @@ public class Person {
 		this.birthday = birthday;
 	}
 
+	public Person() {
+		
+	}
+	
 	/**
 	 * @return the id
 	 */
@@ -101,5 +105,13 @@ public class Person {
 	public void setBirthday(GregorianCalendar birthday) {
 		this.birthday = birthday;
 	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", username=" + username + ", firstname=" + firstname + ", lastname=" + lastname
+				+ ", password=" + password + ", birthday=" + birthday.getTime() + "]";
+	}
+	
+	
 
 }

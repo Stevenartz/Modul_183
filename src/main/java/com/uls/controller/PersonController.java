@@ -1,7 +1,6 @@
 package com.uls.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -17,14 +16,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.uls.dao.IPersonDAO;
+import com.uls.dao.PersonDAO;
 import com.uls.model.Person;
-import com.uls.security.MD5Hasher;
+import com.uls.security.SHA512Hasher;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
  * should be splitted into PersonController and Authenticate Controller
+ * 
  * @author sulri
  *
  */
@@ -33,15 +35,12 @@ public class PersonController {
 
 	private final int USERNAME = 0;
 	private final int PASSWORD = 1;
-	
-	private List<Person> personList = new ArrayList<>();
-	private MD5Hasher mdHasher = new MD5Hasher();
+
+	private IPersonDAO personDAO;
+	private SHA512Hasher sha512Hasher = new SHA512Hasher();
 
 	private PersonController() {
-		personList.add(new Person(1, "stevenartz", "Stefan", "Ulrich", mdHasher.stringToHash("password"),
-				createDate(2000, 7, 13)));
-		personList
-				.add(new Person(2, "samu", "Samuel", "Strehler", mdHasher.stringToHash("pw"), createDate(1999, 9, 22)));
+		personDAO = new PersonDAO();
 	}
 
 	/**
@@ -54,20 +53,22 @@ public class PersonController {
 		// TODO & method comments aswell
 		// hasher.hashPassword();
 		// Dummy Data
-		return personList;
+		return personDAO.getAllPersons();
 	}
 
-	@RequestMapping(value = "/authenticate", method = RequestMethod.GET)
+	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public String getTest(@RequestHeader Map<String, String> headers, HttpServletResponse response) throws IOException {
 
-		System.out.println(">>> does match?: " + doesUsernameAndPasswordValid(decodeBase64(headers.get("authorization"))));
-		
-		if (doesUsernameAndPasswordValid(decodeBase64(headers.get("authorization")))) {
+		System.out
+				.println(">>> does match?: " + isUsernameAndPasswordValid(decodeBase64(headers.get("authorization"))));
+
+		if (isUsernameAndPasswordValid(decodeBase64(headers.get("authorization")))) {
 			String secret = "pasword";
 			Map<String, Object> claims = new HashMap<>();
-			return Jwts.builder().setClaims(claims).setSubject("subi").setIssuedAt(new Date(System.currentTimeMillis()))
+			return Jwts.builder().setClaims(claims).setSubject("Hallo Samuel ;)")
+					.setIssuedAt(new Date(System.currentTimeMillis()))
 					.setExpiration(new Date(System.currentTimeMillis() + 1 * 1000))
-					.signWith(SignatureAlgorithm.HS512, secret).compact();
+					.signWith(SignatureAlgorithm.HS512, secret).setHeaderParam("typ", "JWT").compact();
 		} else {
 			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
 			return "";
@@ -95,11 +96,11 @@ public class PersonController {
 		return new String(decodedBytes).split(":");
 	}
 
-	private boolean doesUsernameAndPasswordValid(String[] authCredentials) {
+	private boolean isUsernameAndPasswordValid(String[] authCredentials) {
 		boolean status = false;
-		for (Person person : personList) {
+		for (Person person : personDAO.getAllPersons()) {
 			if (person.getUsername().equals(authCredentials[USERNAME])
-					&& person.getPassword().equals(mdHasher.stringToHash(authCredentials[PASSWORD]))) {
+					&& person.getPassword().equals(sha512Hasher.stringToHash(authCredentials[PASSWORD]))) {
 				status = true;
 				break;
 			}
