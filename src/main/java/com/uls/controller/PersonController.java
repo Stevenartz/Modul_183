@@ -97,6 +97,8 @@ public class PersonController {
 	}
 
 	private boolean isUsernameAndPasswordValid(String[] authCredentials) {
+		 // TODO lookupPersonByUsername
+		
 		boolean status = false;
 		for (Person person : personDAO.getAllPersons()) {
 			if (person.getUsername().equals(authCredentials[USERNAME])
