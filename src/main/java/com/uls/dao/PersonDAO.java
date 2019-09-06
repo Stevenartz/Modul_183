@@ -8,43 +8,52 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import com.uls.dao.factory.ConnectionFactory;
+import com.uls.dao.manager.QueryManager;
+import com.uls.dao.mapper.Mapper;
 import com.uls.model.Person;
 
 public class PersonDAO implements IPersonDAO {
 
-	private final String TABLE = "persons";
-	
-	// TODO change user, dont use root as default, to many rights!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	
-	@Override
-	public Person lookupPersonById(int id) {
-		Connection conn = ConnectionFactory.getConnection();
-		return null;
+	private QueryManager queryManager;
+	private Mapper mapper;
+
+	// TODO change user, dont use root as default, to many
+	// rights!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	public PersonDAO() {
+		queryManager = new QueryManager();
+		mapper = new Mapper();
 	}
 
 	@Override
-	public List<Person> getAllPersons() {
+	public Person lookupPersonById(int id) {
 		Connection conn = ConnectionFactory.getConnection();
-		List<Person> personList = null;
+		Person person = null;
 		try {
-			PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM " + TABLE);
-			ResultSet rs = pstmt.executeQuery();
-			personList = new ArrayList<>();
-			while (rs.next()) {
-				Person person = new Person();
-				person.setId(rs.getLong(PersonType.ID.toString()));
-				person.setUsername(rs.getString(PersonType.USERNAME.toString()));
-				person.setFirstname(rs.getString(PersonType.FIRSTNAME.toString()));
-				person.setLastname(rs.getString(PersonType.LASTNAME.toString()));
-				person.setPassword(rs.getString(PersonType.PASSWORD.toString()));
-				GregorianCalendar calendar = new GregorianCalendar();
-				calendar.setTime(rs.getDate(PersonType.BIRTHDAY.toString()));
-				person.setBirthday(calendar);
-				personList.add(person);
+			PreparedStatement pstmt = conn.prepareStatement(queryManager.lookupPersonById());
+			pstmt.setInt(1, id);
+			List<Person> personList = mapper.mapResultSetToPersonList(pstmt.executeQuery());
+			if (personList != null && personList.size() == 1) {
+				person = personList.get(0);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return person;
+	}
+
+	@Override
+	public List<Person> selectAllPersons() {
+		Connection conn = ConnectionFactory.getConnection();
+		List<Person> personList = null;
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(queryManager.selectAllPersons());
+			personList = mapper.mapResultSetToPersonList(pstmt.executeQuery());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 		return personList;
 	}
 

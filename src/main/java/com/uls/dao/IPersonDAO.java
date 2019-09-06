@@ -7,7 +7,7 @@ import com.uls.model.Person;
 public interface IPersonDAO {
 
 	Person lookupPersonById(int id);
-	List<Person> getAllPersons();
+	List<Person> selectAllPersons();
 	boolean insertPerson();
 	boolean updateUser();
 	boolean deleteUser();

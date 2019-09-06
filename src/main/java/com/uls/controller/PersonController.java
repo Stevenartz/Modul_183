@@ -53,7 +53,7 @@ public class PersonController {
 		// TODO & method comments aswell
 		// hasher.hashPassword();
 		// Dummy Data
-		return personDAO.getAllPersons();
+		return personDAO.selectAllPersons();
 	}
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
@@ -65,7 +65,7 @@ public class PersonController {
 		if (isUsernameAndPasswordValid(decodeBase64(headers.get("authorization")))) {
 			String secret = "pasword";
 			Map<String, Object> claims = new HashMap<>();
-			return Jwts.builder().setClaims(claims).setSubject("Hallo Samuel ;)")
+			return Jwts.builder().setClaims(claims).setSubject("Ich habe Wochenende!")
 					.setIssuedAt(new Date(System.currentTimeMillis()))
 					.setExpiration(new Date(System.currentTimeMillis() + 1 * 1000))
 					.signWith(SignatureAlgorithm.HS512, secret).setHeaderParam("typ", "JWT").compact();
@@ -97,10 +97,10 @@ public class PersonController {
 	}
 
 	private boolean isUsernameAndPasswordValid(String[] authCredentials) {
+		boolean status = false;
 		 // TODO lookupPersonByUsername
 		
-		boolean status = false;
-		for (Person person : personDAO.getAllPersons()) {
+		for (Person person : personDAO.selectAllPersons()) {
 			if (person.getUsername().equals(authCredentials[USERNAME])
 					&& person.getPassword().equals(sha512Hasher.stringToHash(authCredentials[PASSWORD]))) {
 				status = true;

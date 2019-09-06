@@ -1,4 +1,4 @@
-package com.uls.dao;
+package com.uls.dao.type;
 
 public enum PersonType {
 
