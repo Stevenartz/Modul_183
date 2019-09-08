@@ -28,11 +28,20 @@ public class QueryManager {
 	
 	public String lookupPersonById() {
 		String selectAllPersonsQuery = selectAllPersons();
-		
 		return new StringBuilder()
 				.append(selectAllPersonsQuery.substring(0, selectAllPersonsQuery.length() - 1))
 				.append(" WHERE ")
 				.append(PersonType.ID)
+				.append(" = ?;")
+				.toString();
+	}
+	
+	public String lookupPersonByUsername() {
+		String selectAllPersonsQuery = selectAllPersons();
+		return new StringBuilder()
+				.append(selectAllPersonsQuery.substring(0, selectAllPersonsQuery.length() - 1))
+				.append(" WHERE ")
+				.append(PersonType.USERNAME)
 				.append(" = ?;")
 				.toString();
 	}

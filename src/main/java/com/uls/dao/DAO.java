@@ -12,7 +12,8 @@ public class DAO {
 		}
 		System.out.println(">>> dao.lookupPersonById(1)");
 		System.out.println(dao.lookupPersonById(1));
-		
+		System.out.println(">>> dao.lookupPersonByUsername(\"Samu\")");
+		System.out.println(dao.lookupPersonByUsername("Samu"));
 	}
 	
 }

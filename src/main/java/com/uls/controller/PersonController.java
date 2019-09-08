@@ -1,16 +1,13 @@
 package com.uls.controller;
 
-import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.DatatypeConverter;
 
-import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,10 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.uls.dao.IPersonDAO;
 import com.uls.dao.PersonDAO;
 import com.uls.model.Person;
-import com.uls.security.SHA512Hasher;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
  * should be splitted into PersonController and Authenticate Controller
@@ -33,46 +29,58 @@ import io.jsonwebtoken.SignatureAlgorithm;
 @RestController
 public class PersonController {
 
-	private final int USERNAME = 0;
-	private final int PASSWORD = 1;
-
+	// TODO LOGGING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
+	private final int TOKEN = 1;
 	private IPersonDAO personDAO;
-	private SHA512Hasher sha512Hasher = new SHA512Hasher();
 
 	private PersonController() {
 		personDAO = new PersonDAO();
 	}
 
+	@CrossOrigin(origins = "http://localhost:3000")
+	@RequestMapping(value = "/getPersonByUsername", method = RequestMethod.GET)
+	public Person getPersonByUsername(@RequestHeader Map<String, String> headers) {
+
+		String token[] = headers.get("authorization").split(" ");
+		Claims claims = verifyToken(token[TOKEN]);
+		Person person = null;
+		
+		if (claims != null) {
+			for (Map.Entry<String, Object> entry : claims.entrySet()) {
+				System.out.println(entry.getKey() + " -> " + entry.getValue());
+				if (entry.getKey().trim().equals("username")) {
+					person = personDAO.lookupPersonByUsername(entry.getValue().toString());
+				}
+			}
+		}
+		
+		return person;
+		
+	}
+	
 	/**
 	 * 
 	 * @return
 	 */
-	@RequestMapping("/persons")
-	public List<Person> getPersons() {
+	@RequestMapping(value = "/persons", method = RequestMethod.GET)
+	public List<Person> getPersons(@RequestHeader Map<String, String> headers) {
 
+		String token[] = headers.get("authorization").split(" ");
+		System.out.println("Token: " + token[TOKEN]);
+		
+		Claims claims = verifyToken(token[TOKEN]);
+		
+		if (claims != null) {
+			for (Map.Entry<String, Object> entry : claims.entrySet()) {
+				System.out.println(entry.getKey() + " -> " + entry.getValue());
+			}
+		}
+		
 		// TODO & method comments aswell
 		// hasher.hashPassword();
 		// Dummy Data
 		return personDAO.selectAllPersons();
-	}
-
-	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-	public String getTest(@RequestHeader Map<String, String> headers, HttpServletResponse response) throws IOException {
-
-		System.out
-				.println(">>> does match?: " + isUsernameAndPasswordValid(decodeBase64(headers.get("authorization"))));
-
-		if (isUsernameAndPasswordValid(decodeBase64(headers.get("authorization")))) {
-			String secret = "pasword";
-			Map<String, Object> claims = new HashMap<>();
-			return Jwts.builder().setClaims(claims).setSubject("Ich habe Wochenende!")
-					.setIssuedAt(new Date(System.currentTimeMillis()))
-					.setExpiration(new Date(System.currentTimeMillis() + 1 * 1000))
-					.signWith(SignatureAlgorithm.HS512, secret).setHeaderParam("typ", "JWT").compact();
-		} else {
-			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
-			return "";
-		}
 	}
 
 	/**
@@ -89,25 +97,9 @@ public class PersonController {
 		calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 		return calendar;
 	}
-
-	private String[] decodeBase64(String authorization) {
-		String base64Credentials = authorization.substring("Basic".length()).trim();
-		byte[] decodedBytes = Base64.decodeBase64(base64Credentials);
-		return new String(decodedBytes).split(":");
-	}
-
-	private boolean isUsernameAndPasswordValid(String[] authCredentials) {
-		boolean status = false;
-		 // TODO lookupPersonByUsername
-		
-		for (Person person : personDAO.selectAllPersons()) {
-			if (person.getUsername().equals(authCredentials[USERNAME])
-					&& person.getPassword().equals(sha512Hasher.stringToHash(authCredentials[PASSWORD]))) {
-				status = true;
-				break;
-			}
-		}
-		return status;
+	
+	private Claims verifyToken(String jwt) {
+		return Jwts.parser().setSigningKey(DatatypeConverter.parseBase64Binary("pasword")).parseClaimsJws(jwt).getBody();
 	}
 
 }

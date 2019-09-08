@@ -42,6 +42,23 @@ public class PersonDAO implements IPersonDAO {
 		}
 		return person;
 	}
+	
+	@Override
+	public Person lookupPersonByUsername(String username) {
+		Connection conn = ConnectionFactory.getConnection();
+		Person person = null;
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(queryManager.lookupPersonByUsername());
+			pstmt.setString(1, username);
+			List<Person> personList = mapper.mapResultSetToPersonList(pstmt.executeQuery());
+			if (personList != null && personList.size() == 1) {
+				person = personList.get(0);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return person;
+	}
 
 	@Override
 	public List<Person> selectAllPersons() {
@@ -74,5 +91,7 @@ public class PersonDAO implements IPersonDAO {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
 
 }
