@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<logger name="org.springframework" level="OFF" />
+	<logger name="org.hibernate" level="OFF" />
+	<logger name="org.apache" level="OFF" />
+	<logger name="com.zaxxer" level="OFF" />
+	<logger name="com.uls.m183.M183Application" level="OFF" />
+
+	<!-- ===== PROPERTIES ===== -->
+
+	<!-- Charset -->
+	<property name="CHARSET" value="utf8" />
+
+	<!-- Patterns -->
+	<property name="LOG_PATTERN"
+		value="%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS} | %thread | %5p | %logger{25} | %m%n" />
+
+	<!-- Prefixes -->
+	<property name="prefix" value="com.uls." />
+
+	<!-- Loggers -->
+	<property name="PersonController" value="${prefix}controller.PersonController" />
+
+	
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<!-- <logger name="com.uls.m183.M183Application" level="INFO" additivity="false"> 
+		<appender-ref ref="STDOUT" /> </logger> -->
+
+	<logger name="${PersonController}" level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+<!-- 	<root level="OFF">
+		<appender-ref ref="STDOUT" />
+	</root> -->
+
+</configuration>

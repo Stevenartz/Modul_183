@@ -7,6 +7,8 @@ import java.util.Map;
 
 import javax.xml.bind.DatatypeConverter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,12 +31,13 @@ import io.jsonwebtoken.Jwts;
 @RestController
 public class PersonController {
 
-	// TODO LOGGING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	private final int TOKEN = 1;
 	private IPersonDAO personDAO;
 
 	private PersonController() {
+		LOGGER.debug("PersonController initialized!");
 		personDAO = new PersonDAO();
 	}
 
@@ -42,6 +45,7 @@ public class PersonController {
 	@RequestMapping(value = "/getPersonByUsername", method = RequestMethod.GET)
 	public Person getPersonByUsername(@RequestHeader Map<String, String> headers) {
 
+		
 		String token[] = headers.get("authorization").split(" ");
 		Claims claims = verifyToken(token[TOKEN]);
 		Person person = null;
