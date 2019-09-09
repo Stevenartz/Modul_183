@@ -1,6 +1,15 @@
 # Modul_183
 
-# Contributors
+## Gebaut mit
+
+| Technologie  | Beschreibung |
+| ------------ | ------------ |
+| [Spring Boot](https://spring.io/projects/spring-boot/) | Spring Boot Desc. |
+| [Connector/J](https://dev.mysql.com/downloads/connector/j/) | Connector Desc. |
+| [JWT](https://jwt.io/) | JWT Desc. |
+| [SLF4J](https://www.slf4j.org/) | SLF4J Desc. |
+
+# Mitwirkende
 
 <table>
     <tr>
@@ -9,4 +18,3 @@
                     alt="Stevenartz" /><br /><sub><b>Stevenartz</b></sub></a><br /></td>
     </tr>
 </table>
-
