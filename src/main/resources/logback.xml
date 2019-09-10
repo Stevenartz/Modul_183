@@ -21,6 +21,7 @@
 
 	<!-- Loggers -->
 	<property name="PersonController" value="${prefix}controller.PersonController" />
+	<property name="AuthenticationController" value="${prefix}controller.AuthenticationController" />
 
 	
 
@@ -35,6 +36,10 @@
 		<appender-ref ref="STDOUT" /> </logger> -->
 
 	<logger name="${PersonController}" level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	
+	<logger name="${AuthenticationController}" level="DEBUG">
 		<appender-ref ref="STDOUT" />
 	</logger>
 

@@ -8,6 +8,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.uls.dao.IPersonDAO;
 import com.uls.dao.PersonDAO;
 import com.uls.model.Person;
+import com.uls.security.Authorizer;
+import com.uls.security.JWTHelper;
 import com.uls.security.SHA512Hasher;
-
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
 public class AuthenticationController {
@@ -29,31 +30,38 @@ public class AuthenticationController {
 	private final int PASSWORD = 1;
 
 	private IPersonDAO personDAO;
-	private SHA512Hasher sha512Hasher = new SHA512Hasher();
+	private SHA512Hasher sha512Hasher;
+	private JWTHelper jwtHelper;
+	private Authorizer authorizer;
 
+	final Logger LOGGER = LoggerFactory.getLogger(getClass());
+	
 	private AuthenticationController() {
+		LOGGER.debug("AuthenticationController initialized!");
 		personDAO = new PersonDAO();
+		sha512Hasher = new SHA512Hasher();
+		jwtHelper = new JWTHelper();
+		authorizer = new Authorizer();
 	}
 
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-	public String authenticate(@RequestHeader Map<String, String> headers, HttpServletResponse response) throws IOException {
-
-		System.out
-				.println(">>> does match?: " + isUsernameAndPasswordValid(decodeBase64(headers.get("authorization"))));
-
+	public String authenticate(@RequestHeader Map<String, String> headers, HttpServletResponse response) {
+		
+		String token;
 		if (isUsernameAndPasswordValid(decodeBase64(headers.get("authorization")))) {
-			String secret = "pasword";
 			Map<String, Object> claims = new HashMap<>();
 			claims.put("username", decodeBase64(headers.get("authorization"))[USERNAME]);
-			return Jwts.builder().setClaims(claims).setSubject("Ich habe Wochenende!")
-					.setIssuedAt(new Date(System.currentTimeMillis()))
-					.setExpiration(new Date(System.currentTimeMillis() + 60 * 60 * 1000))
-					.signWith(SignatureAlgorithm.HS512, secret).setHeaderParam("typ", "JWT").compact();
+			token = jwtHelper.createJWT(claims, "subjeect", new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis() + 60 * 60 * 1000));
 		} else {
-			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+			try {
+				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			return "";
 		}
+		return token;
 	}
 
 	private String[] decodeBase64(String authorization) {

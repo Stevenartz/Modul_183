@@ -12,7 +12,7 @@ public class ConnectionFactory {
 	private final static String TIME_ZONE = "serverTimezone=UTC"; 
 	private final static String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE_NAME + "?" + TIME_ZONE;
 	private final static String USERNAME = "root";
-	private final static String PASSWORD = "password"; // Laptop: "" / E0NNDTS: "password"
+	private final static String PASSWORD = ""; // Laptop: "" / E0NNDTS: "password"
 	
 	private static Connection connection;
 	

@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.uls.dao.factory.ConnectionFactory;
 import com.uls.dao.manager.QueryManager;
 import com.uls.dao.mapper.Mapper;
@@ -18,6 +21,8 @@ public class PersonDAO implements IPersonDAO {
 	private QueryManager queryManager;
 	private Mapper mapper;
 
+	final Logger LOGGER = LoggerFactory.getLogger(getClass());
+	
 	// TODO change user, dont use root as default, to many
 	// rights!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

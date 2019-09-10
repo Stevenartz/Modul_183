@@ -1,11 +1,7 @@
 package com.uls.controller;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
-
-import javax.xml.bind.DatatypeConverter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.uls.dao.IPersonDAO;
 import com.uls.dao.PersonDAO;
 import com.uls.model.Person;
+import com.uls.security.Authorizer;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
 
 /**
  * should be splitted into PersonController and Authenticate Controller
@@ -31,79 +27,75 @@ import io.jsonwebtoken.Jwts;
 @RestController
 public class PersonController {
 
-	final Logger LOGGER = LoggerFactory.getLogger(getClass());
-	
-	private final int TOKEN = 1;
 	private IPersonDAO personDAO;
+	private Authorizer authorizer;
+
+	final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
 	private PersonController() {
 		LOGGER.debug("PersonController initialized!");
 		personDAO = new PersonDAO();
+		authorizer = new Authorizer();
 	}
 
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/getPersonByUsername", method = RequestMethod.GET)
 	public Person getPersonByUsername(@RequestHeader Map<String, String> headers) {
-
-		
-		String token[] = headers.get("authorization").split(" ");
-		Claims claims = verifyToken(token[TOKEN]);
 		Person person = null;
-		
+		Claims claims;
+		Object usernameClaim;
+		String username;
+
+		claims = authorizer.checkAuth(headers);
 		if (claims != null) {
-			for (Map.Entry<String, Object> entry : claims.entrySet()) {
-				System.out.println(entry.getKey() + " -> " + entry.getValue());
-				if (entry.getKey().trim().equals("username")) {
-					person = personDAO.lookupPersonByUsername(entry.getValue().toString());
+			usernameClaim = claims.get("username");
+			if (usernameClaim != null) {
+				username = usernameClaim.toString().trim();
+				person = personDAO.lookupPersonByUsername(username);
+				if (person != null) {
+					LOGGER.debug("Successfully found person with username: '{}'!", username);
+				} else {
+					LOGGER.debug("No person found with usrname: '{}'!", username);
 				}
+			} else {
+				LOGGER.debug("No Claim found with id 'username'!");
 			}
+		} else {
+			LOGGER.debug("No Claims found in Token!");
 		}
-		
+
 		return person;
-		
 	}
-	
+
 	/**
 	 * 
 	 * @return
 	 */
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 	public List<Person> getPersons(@RequestHeader Map<String, String> headers) {
-
-		String token[] = headers.get("authorization").split(" ");
-		System.out.println("Token: " + token[TOKEN]);
-		
-		Claims claims = verifyToken(token[TOKEN]);
-		
-		if (claims != null) {
-			for (Map.Entry<String, Object> entry : claims.entrySet()) {
-				System.out.println(entry.getKey() + " -> " + entry.getValue());
-			}
+		List<Person> personList = null;
+		if (authorizer.checkAuth(headers) != null) {
+			LOGGER.debug("Select all Persons from database!");
+			personList = personDAO.selectAllPersons();
+		} else {
+			LOGGER.debug("No Claims found in Token!");
 		}
-		
-		// TODO & method comments aswell
-		// hasher.hashPassword();
-		// Dummy Data
-		return personDAO.selectAllPersons();
+		return personList;
 	}
 
-	/**
-	 * 
-	 * @param year
-	 * @param month
-	 * @param dayOfMonth
-	 * @return
-	 */
-	private GregorianCalendar createDate(int year, int month, int dayOfMonth) {
-		GregorianCalendar calendar = new GregorianCalendar();
-		calendar.set(Calendar.YEAR, year);
-		calendar.set(Calendar.MONTH, month - 1);
-		calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-		return calendar;
-	}
-	
-	private Claims verifyToken(String jwt) {
-		return Jwts.parser().setSigningKey(DatatypeConverter.parseBase64Binary("pasword")).parseClaimsJws(jwt).getBody();
-	}
+//	/**
+//	 * 
+//	 * @param year
+//	 * @param month
+//	 * @param dayOfMonth
+//	 * @return
+//	 */
+//	private GregorianCalendar createDate(int year, int month, int dayOfMonth) {
+//		GregorianCalendar calendar = new GregorianCalendar();
+//		calendar.set(Calendar.YEAR, year);
+//		calendar.set(Calendar.MONTH, month - 1);
+//		calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+//		return calendar;
+//	}
 
 }
