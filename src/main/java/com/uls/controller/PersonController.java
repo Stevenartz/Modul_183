@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.uls.dao.IPersonDAO;
 import com.uls.dao.PersonDAO;
 import com.uls.model.Person;
-import com.uls.security.Authorizer;
+import com.uls.security.RequestHandler;
 
 import io.jsonwebtoken.Claims;
 
@@ -28,25 +28,33 @@ import io.jsonwebtoken.Claims;
 public class PersonController {
 
 	private IPersonDAO personDAO;
-	private Authorizer authorizer;
+	private RequestHandler reqHandler;
+	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-	final Logger LOGGER = LoggerFactory.getLogger(getClass());
-
+	/**
+	 * 
+	 */
 	private PersonController() {
 		LOGGER.debug("PersonController initialized!");
 		personDAO = new PersonDAO();
-		authorizer = new Authorizer();
+		reqHandler = new RequestHandler();
 	}
 
+	/**
+	 * 
+	 * @param headers
+	 * @return
+	 */
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/getPersonByUsername", method = RequestMethod.GET)
 	public Person getPersonByUsername(@RequestHeader Map<String, String> headers) {
+		LOGGER.info("User trying to get a Person by his username!");
 		Person person = null;
-		Claims claims;
 		Object usernameClaim;
 		String username;
+		Claims claims = reqHandler.checkAuthorization(headers);;
+		LOGGER.debug("Claims set to: '{}'!", claims);
 
-		claims = authorizer.checkAuth(headers);
 		if (claims != null) {
 			usernameClaim = claims.get("username");
 			if (usernameClaim != null) {
@@ -54,8 +62,9 @@ public class PersonController {
 				person = personDAO.lookupPersonByUsername(username);
 				if (person != null) {
 					LOGGER.debug("Successfully found person with username: '{}'!", username);
+					LOGGER.info("Person found and set!");
 				} else {
-					LOGGER.debug("No person found with usrname: '{}'!", username);
+					LOGGER.debug("No person found with username: '{}'!", username);
 				}
 			} else {
 				LOGGER.debug("No Claim found with id 'username'!");
@@ -63,7 +72,9 @@ public class PersonController {
 		} else {
 			LOGGER.debug("No Claims found in Token!");
 		}
-
+		if (person == null) {
+			LOGGER.info("No person found!");
+		}
 		return person;
 	}
 
@@ -71,14 +82,20 @@ public class PersonController {
 	 * 
 	 * @return
 	 */
+	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 	public List<Person> getPersons(@RequestHeader Map<String, String> headers) {
 		List<Person> personList = null;
-		if (authorizer.checkAuth(headers) != null) {
+		LOGGER.info("User trying to get a List with all persons!");
+		if (reqHandler.checkAuthorization(headers) != null) {
 			LOGGER.debug("Select all Persons from database!");
 			personList = personDAO.selectAllPersons();
 		} else {
 			LOGGER.debug("No Claims found in Token!");
+			LOGGER.info("Wasn't able to load persons!");
+		}
+		if (personList != null) {
+			LOGGER.info("List with persons successfully filled!");
 		}
 		return personList;
 	}

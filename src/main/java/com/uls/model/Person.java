@@ -2,8 +2,13 @@ package com.uls.model;
 
 import java.util.GregorianCalendar;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Person {
 
+	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+	
 	private long id;
 	private String username, firstname, lastname, password;
 	private GregorianCalendar birthday;
@@ -112,6 +117,4 @@ public class Person {
 				+ ", password=" + password + ", birthday=" + birthday.getTime() + "]";
 	}
 	
-	
-
 }

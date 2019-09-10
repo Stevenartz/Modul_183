@@ -1,0 +1,15 @@
+2019-09-10 | 20:19:57.557 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
+2019-09-10 | 20:19:57.560 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
+2019-09-10 | 20:19:57.868 | main |  INFO | c.u.m183.M183Application | Application successfully started and running!
+2019-09-10 | 20:20:32.645 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | User trying to login!
+2019-09-10 | 20:20:32.645 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Basic U3RldmVuYXJ0ejpwYXNzd29yZA=='!
+2019-09-10 | 20:20:32.648 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Creating new database connection!
+2019-09-10 | 20:20:32.749 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Successfully created connection: 'com.mysql.cj.jdbc.ConnectionImpl@5951bdc4', with URL: 'jdbc:mysql://localhost:3306/modul_183?serverTimezone=UTC', Username: 'root' and Password: 'password'!
+2019-09-10 | 20:20:32.749 | http-nio-8080-exec-2 |  INFO | c.u.d.f.ConnectionFactory | Successfully created a new connection to database!
+2019-09-10 | 20:20:32.750 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT personId, username, firstname, lastname, password, birthday FROM persons;'
+2019-09-10 | 20:20:32.750 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT personId, username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-09-10 | 20:20:32.769 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | User: 'Stevenartz' successfully authenticated!
+2019-09-10 | 20:20:32.769 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | Variable 'username' set to : 'Stevenartz'!
+2019-09-10 | 20:20:32.929 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | Token created: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWJqZWVjdCIsImV4cCI6MTU2ODE0MzIzMiwiaWF0IjoxNTY4MTM5NjMyLCJ1c2VybmFtZSI6IlN0ZXZlbmFydHoifQ.MNfizZrbbLrzaOYqMF-wE2D6HTBwJyVKGR00wwf8B4HTrurNusZKtLtWST3FenLIK0aRyoyniDSUBX7G1KkV-w'!
+2019-09-10 | 20:20:32.930 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | A new JWT has been generated!
+2019-09-10 | 20:20:32.930 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | User successfully logged in!
