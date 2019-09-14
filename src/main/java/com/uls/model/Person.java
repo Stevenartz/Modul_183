@@ -2,17 +2,26 @@ package com.uls.model;
 
 import java.util.GregorianCalendar;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+/**
+ * 
+ * @author sulri
+ *
+ */
 public class Person {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
-	
 	private long id;
 	private String username, firstname, lastname, password;
 	private GregorianCalendar birthday;
 	
+	/**
+	 * 
+	 * @param id
+	 * @param username
+	 * @param firstname
+	 * @param lastname
+	 * @param password
+	 * @param birthday
+	 */
 	public Person(long id, String username, String firstname, String lastname, String password, GregorianCalendar birthday) {
 		super();
 		this.id = id;
@@ -23,6 +32,9 @@ public class Person {
 		this.birthday = birthday;
 	}
 
+	/**
+	 * 
+	 */
 	public Person() {
 		
 	}

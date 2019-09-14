@@ -11,6 +11,13 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {"com.uls.controller"})
 public class M183Application {
 
+	// Stevenartz, password
+	// Samu, pw
+	// Braibrai, passwortpasswort
+	
+	// keystore-Kennwort: Yf8aKPJAoMRQ
+	// Schlüsselkennwort für <tomcat>: ro3ELPTWgCbZ
+	
 	public static void main(String[] args) {
 		final Logger LOGGER = LoggerFactory.getLogger(M183Application.class);
 		new SpringApplicationBuilder()
