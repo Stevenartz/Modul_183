@@ -47,7 +47,7 @@ public class AuthenticationController {
 	 * @return
 	 */
 	@CrossOrigin(origins = "http://localhost:3000")
-	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+	@RequestMapping(value = "/authenticate", method = RequestMethod.GET)
 	public String authenticate(@RequestHeader Map<String, String> headers, HttpServletResponse response) {
 		LOGGER.info("User trying to login!");
 		String username = reqHandler.checkLogin(headers);
