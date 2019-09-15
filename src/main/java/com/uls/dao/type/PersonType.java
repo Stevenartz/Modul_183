@@ -2,7 +2,6 @@ package com.uls.dao.type;
 
 public enum PersonType {
 
-	ID("personId"),
 	USERNAME("username"),
 	FIRSTNAME("firstname"),
 	LASTNAME("lastname"),

@@ -1,4 +1,4 @@
-package com.uls.dao;
+package com.uls.dao.personDAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,6 +16,11 @@ import com.uls.dao.manager.QueryManager;
 import com.uls.dao.mapper.Mapper;
 import com.uls.model.Person;
 
+/**
+ * 
+ * @author sulri
+ *
+ */
 public class PersonDAO implements IPersonDAO {
 
 	private QueryManager queryManager;
@@ -34,46 +39,6 @@ public class PersonDAO implements IPersonDAO {
 		mapper = new Mapper();
 	}
 
-	/**
-	 * 
-	 */
-	@Override
-	public Person lookupPersonById(int id) {
-		Connection conn = ConnectionFactory.getConnection();
-		Person person = null;
-		try {
-			if (id > 0) {
-				if (conn != null) {
-					PreparedStatement pstmt = conn.prepareStatement(queryManager.lookupPersonById());
-					if (pstmt != null) {
-						pstmt.setInt(1, id);
-						LOGGER.debug("Setting parameter 1 with value: '{}'!", id);
-						List<Person> personList = mapper.mapResultSetToPersonList(pstmt.executeQuery());
-						if (personList != null) {
-							if (personList.size() == 1) {
-								person = personList.get(0);
-								LOGGER.info("Successfully found person with id: '{}'!", id);
-							} else {
-								LOGGER.debug("Expected one Element in personlist but was: '{}'!", personList.size());
-							}
-						} else {
-							LOGGER.debug("Person list is null!");
-						}
-					} else {
-						LOGGER.debug("Couldn't create PreparedStatement!");
-					}
-				} else {
-					LOGGER.warn("Connection not active, connection is null!");
-				}
-			} else {
-				LOGGER.debug("id must be higher than zero, but was: '{}'", id);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			LOGGER.error("Failed to execute lookupPersonById({}), Msg: '{}'!", id, e.getMessage());
-		}
-		return person;
-	}
 
 	/**
 	 * 
@@ -109,9 +74,9 @@ public class PersonDAO implements IPersonDAO {
 			} else {
 				LOGGER.debug("username cannot be null!");
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			LOGGER.error("Failed to execute lookupPersonByUsername({}), Msg: '{}'!", username, e.getMessage());
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+			LOGGER.error("Failed to execute lookupPersonByUsername({}), Msg: '{}'!", username, sqle.getMessage());
 		}
 		return person;
 	}
@@ -126,38 +91,12 @@ public class PersonDAO implements IPersonDAO {
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(queryManager.selectAllPersons());
 			personList = mapper.mapResultSetToPersonList(pstmt.executeQuery());
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
 		}
 
 		return personList;
 	}
 
-	/**
-	 * TODO
-	 */
-	@Override
-	public boolean insertPerson() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	/**
-	 * TODO
-	 */
-	@Override
-	public boolean updateUser() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	/**
-	 * TODO
-	 */
-	@Override
-	public boolean deleteUser() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }

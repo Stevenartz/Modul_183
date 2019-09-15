@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.uls.dao.IPersonDAO;
-import com.uls.dao.PersonDAO;
+import com.uls.dao.personDAO.IPersonDAO;
+import com.uls.dao.personDAO.PersonDAO;
 import com.uls.model.Person;
 import com.uls.security.RequestHandler;
 
@@ -52,7 +52,7 @@ public class PersonController {
 		Person person = null;
 		Object usernameClaim;
 		String username;
-		Claims claims = reqHandler.checkAuthorization(headers);;
+		Claims claims = reqHandler.checkAuthorization(headers);
 		LOGGER.debug("Claims set to: '{}'!", claims);
 
 		if (claims != null) {
@@ -65,15 +65,13 @@ public class PersonController {
 					LOGGER.info("Person found and set!");
 				} else {
 					LOGGER.debug("No person found with username: '{}'!", username);
+					LOGGER.info("No person found!");
 				}
 			} else {
 				LOGGER.debug("No Claim found with id 'username'!");
 			}
 		} else {
 			LOGGER.debug("No Claims found in Token!");
-		}
-		if (person == null) {
-			LOGGER.info("No person found!");
 		}
 		return person;
 	}
@@ -90,13 +88,16 @@ public class PersonController {
 		if (reqHandler.checkAuthorization(headers) != null) {
 			LOGGER.debug("Select all Persons from database!");
 			personList = personDAO.selectAllPersons();
+			if (personList != null) {
+				LOGGER.info("List with persons successfully filled!");
+			} else {
+				LOGGER.info("List with persons empty!");
+			}
 		} else {
 			LOGGER.debug("No Claims found in Token!");
 			LOGGER.info("Wasn't able to load persons!");
 		}
-		if (personList != null) {
-			LOGGER.info("List with persons successfully filled!");
-		}
+
 		return personList;
 	}
 

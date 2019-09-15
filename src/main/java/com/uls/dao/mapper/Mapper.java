@@ -10,7 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.uls.dao.type.PersonType;
+import com.uls.dao.type.SongType;
 import com.uls.model.Person;
+import com.uls.model.Song;
 
 /**
  * 
@@ -33,7 +35,6 @@ public class Mapper {
 			if (rs != null) {
 				while (rs.next()) {
 					Person person = new Person();
-					person.setId(rs.getLong(PersonType.ID.toString()));
 					person.setUsername(rs.getString(PersonType.USERNAME.toString()));
 					person.setFirstname(rs.getString(PersonType.FIRSTNAME.toString()));
 					person.setLastname(rs.getString(PersonType.LASTNAME.toString()));
@@ -46,10 +47,39 @@ public class Mapper {
 			} else {
 				LOGGER.debug("Tried to map ResultSet to person list, but ResultSet is null!");
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			LOGGER.error("Failed to map ResultSet to person list, Msg: '{}'!", e.getMessage());
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+			LOGGER.error("Failed to map ResultSet to person list, Msg: '{}'!", sqle.getMessage());
 		}
 		return personList;
+	}
+	
+	/**
+	 * 
+	 * @param rs
+	 * @return
+	 */
+	public List<Song> mapResultSetToSongList(ResultSet rs) {
+		List<Song> songList = new ArrayList<>();
+		LOGGER.debug("Mapping ResultSet to song list!");
+		try {
+			if (rs != null) {
+				while (rs.next()) {
+					Song song = new Song();
+					song.setId(rs.getLong(SongType.ID.toString()));
+					song.setGenre(rs.getString(SongType.GENRE.toString()));
+					song.setTitle(rs.getString(SongType.TITLE.toString()));
+					song.setArtist(rs.getString(SongType.ARTIST.toString()));
+					song.setLength(rs.getInt(SongType.LENGTH.toString()));
+					songList.add(song);
+				}
+			} else {
+				LOGGER.debug("Tried to map ResultSet to song list, but ResultSet is null!");
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+			LOGGER.error("Failed to map ResultSet to song list, Msg: '{}'!", sqle.getMessage());
+		}
+		return songList;
 	}
 }

@@ -18,32 +18,34 @@ USE `modul_183`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `persons`
+-- Table structure for table `songs`
 --
 
-DROP TABLE IF EXISTS `persons`;
+DROP TABLE IF EXISTS `songs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `persons` (
-  `username` varchar(45) NOT NULL,
-  `firstname` varchar(45) NOT NULL,
-  `lastname` varchar(45) NOT NULL,
-  `password` char(128) NOT NULL,
-  `birthday` date NOT NULL,
-  PRIMARY KEY (`username`),
-  UNIQUE KEY `username_UNIQUE` (`username`),
-  UNIQUE KEY `password_UNIQUE` (`password`)
+CREATE TABLE `songs` (
+  `songId` bigint(20) NOT NULL,
+  `persons_username` varchar(45) NOT NULL,
+  `genre` varchar(45) NOT NULL,
+  `title` varchar(45) NOT NULL,
+  `artist` varchar(45) NOT NULL,
+  `length` int(11) NOT NULL,
+  PRIMARY KEY (`songId`),
+  UNIQUE KEY `songId_UNIQUE` (`songId`),
+  KEY `fk_songs_persons_idx` (`persons_username`),
+  CONSTRAINT `fk_songs_persons` FOREIGN KEY (`persons_username`) REFERENCES `persons` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `persons`
+-- Dumping data for table `songs`
 --
 
-LOCK TABLES `persons` WRITE;
-/*!40000 ALTER TABLE `persons` DISABLE KEYS */;
-INSERT INTO `persons` VALUES ('Braibrai','Brian','Bernhauser','4c5a5aa09ab71ecc0c3452eac9884b16644baa18274a03f4bb96c6a95bc9912f87393f4a66a840c6f1705d556e9bf6cd3022c7102104b8b887ebe784cbf68ef8','2000-10-07'),('Samu','Samuel','Strehler','be196838736ddfd0007dd8b2e8f46f22d440d4c5959925cb49135abc9cdb01e84961aa43dd0ddb6ee59975eb649280d9f44088840af37451828a6412b9b574fc','1999-09-22'),('Stevenartz','Stefan','Ulrich','b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86','2000-07-13');
-/*!40000 ALTER TABLE `persons` ENABLE KEYS */;
+LOCK TABLES `songs` WRITE;
+/*!40000 ALTER TABLE `songs` DISABLE KEYS */;
+INSERT INTO `songs` VALUES (1,'Stevenartz','pop','titel','artist',65),(2,'Samu','rock','titel2','artist2',120);
+/*!40000 ALTER TABLE `songs` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

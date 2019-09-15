@@ -9,7 +9,6 @@ import java.util.GregorianCalendar;
  */
 public class Person {
 
-	private long id;
 	private String username, firstname, lastname, password;
 	private GregorianCalendar birthday;
 	
@@ -22,9 +21,8 @@ public class Person {
 	 * @param password
 	 * @param birthday
 	 */
-	public Person(long id, String username, String firstname, String lastname, String password, GregorianCalendar birthday) {
+	public Person(String username, String firstname, String lastname, String password, GregorianCalendar birthday) {
 		super();
-		this.id = id;
 		this.username = username;
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -37,14 +35,7 @@ public class Person {
 	 */
 	public Person() {
 		
-	}
-	
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
+	}	
 
 	/**
 	 * @return the username
@@ -79,13 +70,6 @@ public class Person {
 	 */
 	public GregorianCalendar getBirthday() {
 		return birthday;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	/**
@@ -125,7 +109,7 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", username=" + username + ", firstname=" + firstname + ", lastname=" + lastname
+		return "Person [username=" + username + ", firstname=" + firstname + ", lastname=" + lastname
 				+ ", password=" + password + ", birthday=" + birthday.getTime() + "]";
 	}
 	
