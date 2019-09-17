@@ -48,6 +48,7 @@ public class PersonController {
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/getPersonByUsername", method = RequestMethod.GET)
 	public Person getPersonByUsername(@RequestHeader Map<String, String> headers) {
+		LOGGER.debug("--- New Request ---");
 		LOGGER.info("User trying to get a Person by his username!");
 		Person person = null;
 		Object usernameClaim;
@@ -73,6 +74,7 @@ public class PersonController {
 		} else {
 			LOGGER.debug("No Claims found in Token!");
 		}
+		LOGGER.debug("--- End of Request ---");
 		return person;
 	}
 
@@ -83,6 +85,7 @@ public class PersonController {
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 	public List<Person> getPersons(@RequestHeader Map<String, String> headers) {
+		LOGGER.debug("--- New Request ---");
 		List<Person> personList = null;
 		LOGGER.info("User trying to get a List with all persons!");
 		if (reqHandler.checkAuthorization(headers) != null) {
@@ -97,7 +100,7 @@ public class PersonController {
 			LOGGER.debug("No Claims found in Token!");
 			LOGGER.info("Wasn't able to load persons!");
 		}
-
+		LOGGER.debug("--- End of Request ---");
 		return personList;
 	}
 

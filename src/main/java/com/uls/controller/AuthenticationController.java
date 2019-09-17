@@ -32,7 +32,7 @@ public class AuthenticationController {
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
 	/**
-	 * 
+	 * default constructor
 	 */
 	private AuthenticationController() {
 		LOGGER.debug("AuthenticationController initialized!");
@@ -49,6 +49,7 @@ public class AuthenticationController {
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/authenticate", method = RequestMethod.GET)
 	public String authenticate(@RequestHeader Map<String, String> headers, HttpServletResponse response) {
+		LOGGER.debug("--- New Request ---");
 		LOGGER.info("User trying to login!");
 		String username = reqHandler.checkLogin(headers);
 		LOGGER.debug("Variable 'username' set to : '{}'!", username);
@@ -72,6 +73,7 @@ public class AuthenticationController {
 				LOGGER.error("Failed to display Unauthorized page, Msg: '{}'!", e.getMessage());
 			}
 		}
+		LOGGER.debug("--- End of Request ---");
 		return token;
 	}
 

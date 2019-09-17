@@ -33,7 +33,7 @@ public class SongDAO implements ISongDAO {
 		mapper = new Mapper();
 	}
 
-	/**
+	/**a
 	 * 
 	 */
 	@Override
@@ -48,6 +48,28 @@ public class SongDAO implements ISongDAO {
 			sqle.printStackTrace();
 		}
 		return songList;
+	}
+
+	@Override
+	public boolean insertSongByUsername(String username, Song song) {
+		Connection conn = ConnectionFactory.getConnection();
+		boolean status = false;
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(queryManager.insertSongByUsername());
+			pstmt.setString(1, username);
+			pstmt.setString(2, song.getGenre());
+			pstmt.setString(3, song.getTitle());
+			pstmt.setString(4, song.getArtist());
+			pstmt.setInt(5, song.getLength());
+			int row = pstmt.executeUpdate();
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+		System.out.println(queryManager.insertSongByUsername());
+		
+		System.out.println("inserting song: " + song + " with username: " + username);
+		
+		return status;
 	}
 	
 }

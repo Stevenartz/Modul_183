@@ -77,9 +77,33 @@ public class QueryManager {
 			.append(SONGS_TABLE)
 			.append(" WHERE ")
 			.append(SongType.PERSON_FOREGIN_KEY)
-			.append(" = ?");
+			.append(" = ?;");
 		
 		LOGGER.debug("Successfully created the lookupAllSongsById query: '{}'", query.toString());
+		return query.toString();
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String insertSongByUsername() {
+		StringBuilder query = new StringBuilder()
+			.append("INSERT INTO ")
+			.append(SONGS_TABLE)
+			.append(" (")
+			.append(SongType.PERSON_FOREGIN_KEY)
+			.append(", ")
+			.append(SongType.GENRE)
+			.append(", ")
+			.append(SongType.TITLE)
+			.append(", ")
+			.append(SongType.ARTIST)
+			.append(", ")
+			.append(SongType.LENGTH)
+			.append(") VALUES (?, ?, ?, ?, ?);");
+		
+		LOGGER.debug("Successfully created the insertSongByUsername query: '{}'", query.toString());
 		return query.toString();
 	}
 	

@@ -1,7 +1,5 @@
 package com.uls.model;
 
-import java.util.GregorianCalendar;
-
 /**
  * 
  * @author sulri
@@ -15,15 +13,13 @@ public class Song {
 
 	/**
 	 * 
-	 * @param id
 	 * @param genre
 	 * @param title
 	 * @param artist
 	 * @param length
 	 */
-	public Song(long id, String genre, String title, String artist, int length) {
+	public Song(String genre, String title, String artist, int length) {
 		super();
-		this.id = id;
 		this.genre = genre;
 		this.title = title;
 		this.artist = artist;

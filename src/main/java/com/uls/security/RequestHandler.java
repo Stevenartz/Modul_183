@@ -8,10 +8,17 @@ import org.slf4j.LoggerFactory;
 
 import com.uls.dao.personDAO.IPersonDAO;
 import com.uls.dao.personDAO.PersonDAO;
+import com.uls.dao.type.SongType;
 import com.uls.model.Person;
+import com.uls.model.Song;
 
 import io.jsonwebtoken.Claims;
 
+/**
+ * 
+ * @author Stefan
+ *
+ */
 public class RequestHandler {
 
 	private JWTHelper jwtHelper;
@@ -24,6 +31,9 @@ public class RequestHandler {
 	
 	final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
+	/**
+	 * 
+	 */
 	public RequestHandler() {
 		jwtHelper = new JWTHelper();
 		personDAO = new PersonDAO();
@@ -82,7 +92,7 @@ public class RequestHandler {
 						LOGGER.debug("User: '{}' tried to login with wrong password!", usernameAndPassword[USERNAME]);
 					}
 				} else {
-					LOGGER.debug("No person found with usrname: '{}'!", usernameAndPassword[USERNAME]);
+					LOGGER.debug("No person found with username: '{}'!", usernameAndPassword[USERNAME]);
 				}
 			} else {
 				LOGGER.debug("Authorization header not long enough, expected: '2', but was : '{}'!", usernameAndPassword.length);
@@ -91,6 +101,39 @@ public class RequestHandler {
 			LOGGER.debug("No authorization found in header!");
 		}
 		return username;
+	}
+	
+	/**
+	 * 
+	 * @param headers
+	 * @return
+	 */
+	public Song getSongFromHeaders(Map<String, String> headers) {
+		Song song = null;
+		
+		String genre = headers.get(SongType.GENRE.toString());
+		String title = headers.get(SongType.TITLE.toString());
+		String artist = headers.get(SongType.ARTIST.toString());
+		String lengthString = headers.get(SongType.LENGTH.toString());
+		
+		LOGGER.debug("Validating values: genre: '{}', title: '{}', artist: '{}', length: '{}'!", genre, title, artist, lengthString);
+		
+		if (genre != null && title != null && title != null && lengthString != null) {
+			try {
+				int length = Integer.parseInt(lengthString);
+				song = new Song(genre, title, artist, length);
+			} catch (NumberFormatException nfe) {
+				LOGGER.debug("Exception thrown while validating, exception message: '{}'!", nfe.getMessage());
+				LOGGER.debug("Length attribute is not a Integer but: '{}'!", lengthString);
+			}
+		} else {
+			LOGGER.debug("Validation failed: a Song attribute contains null!");
+		}
+		if (song != null) {
+			LOGGER.debug("Successfully created a new song!");
+		}
+		
+		return song;
 	}
 	
 }
