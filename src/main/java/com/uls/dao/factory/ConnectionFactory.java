@@ -13,14 +13,16 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class ConnectionFactory {
-
+	
 	private static final String HOST = "localhost";
 	private static final int PORT = 3306;
 	private static final String DATABASE_NAME = "modul_183";
 	private static final String TIME_ZONE = "serverTimezone=UTC"; 
 	private static final String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE_NAME + "?" + TIME_ZONE;
-	private static final String USERNAME = "root";
-	private static final String PASSWORD = ""; // Laptop: "" / E0NNDTS: "password"
+	private static final String USERNAME = "stefan"; // stefan
+	private static final String PASSWORD = "sD&XHVg!Rspm"; // sD&XHVg!Rspm
+	
+	// Laptop: "" / E0NNDTS: "password"
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(ConnectionFactory.class);
 	private static Connection connection;

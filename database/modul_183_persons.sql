@@ -31,8 +31,7 @@ CREATE TABLE `persons` (
   `password` char(128) NOT NULL,
   `birthday` date NOT NULL,
   PRIMARY KEY (`username`),
-  UNIQUE KEY `username_UNIQUE` (`username`),
-  UNIQUE KEY `password_UNIQUE` (`password`)
+  UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-15 19:24:11
+-- Dump completed on 2019-09-18 19:10:27

@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `songs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `songs` (
-  `songId` bigint(20) NOT NULL,
+  `songId` bigint(20) NOT NULL AUTO_INCREMENT,
   `persons_username` varchar(45) NOT NULL,
   `genre` varchar(45) NOT NULL,
   `title` varchar(45) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `songs` (
   UNIQUE KEY `songId_UNIQUE` (`songId`),
   KEY `fk_songs_persons_idx` (`persons_username`),
   CONSTRAINT `fk_songs_persons` FOREIGN KEY (`persons_username`) REFERENCES `persons` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-15 19:24:11
+-- Dump completed on 2019-09-18 19:10:27

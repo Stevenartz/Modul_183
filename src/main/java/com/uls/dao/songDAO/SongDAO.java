@@ -61,7 +61,9 @@ public class SongDAO implements ISongDAO {
 			pstmt.setString(3, song.getTitle());
 			pstmt.setString(4, song.getArtist());
 			pstmt.setInt(5, song.getLength());
-			int row = pstmt.executeUpdate();
+			if (pstmt.executeUpdate() == 1) {
+				status = true;
+			}
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
 		}

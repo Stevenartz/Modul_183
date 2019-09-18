@@ -44,7 +44,6 @@ public class SongController {
 		LOGGER.debug("--- New Request ---");
 		LOGGER.info("User trying to save a Song!");
 		
-		
 		Object usernameClaim;
 		String username;
 		Song song;
