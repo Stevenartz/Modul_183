@@ -25,7 +25,7 @@ public class M183Application {
 			.bannerMode(Mode.CONSOLE)
 			.sources(M183Application.class)
 			.run(args);
-		LOGGER.info("Application successfully started and running!");
+		LOGGER.info("Application started and running!");
 	}
 
 }

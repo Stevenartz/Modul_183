@@ -24,13 +24,13 @@ public class RequestHandler {
 	private JWTHelper jwtHelper;
 	private IPersonDAO personDAO;
 	private SHA512Hasher sha512Hasher;
-	
+
 	private final int TOKEN = 1;
 	private final int USERNAME = 0;
 	private final int PASSWORD = 1;
-	
+
 	final Logger LOGGER = LoggerFactory.getLogger(getClass());
-	
+
 	/**
 	 * 
 	 */
@@ -39,7 +39,7 @@ public class RequestHandler {
 		personDAO = new PersonDAO();
 		sha512Hasher = new SHA512Hasher();
 	}
-	
+
 	/**
 	 * 
 	 * @param headers
@@ -63,7 +63,7 @@ public class RequestHandler {
 		}
 		return claims;
 	}
-	
+
 	/**
 	 * 
 	 * @param headers
@@ -71,12 +71,11 @@ public class RequestHandler {
 	 */
 	public String checkLogin(Map<String, String> headers) {
 		String username = null;
-		
+
 		String authorization = headers.get("authorization");
 		String usernameAndPassword[];
 		Person person;
-		
-		
+
 		if (authorization != null) {
 			LOGGER.debug("Authorization found: '{}'!", authorization);
 			String base64Credentials = authorization.substring("Basic".length()).trim();
@@ -95,14 +94,15 @@ public class RequestHandler {
 					LOGGER.debug("No person found with username: '{}'!", usernameAndPassword[USERNAME]);
 				}
 			} else {
-				LOGGER.debug("Authorization header not long enough, expected: '2', but was : '{}'!", usernameAndPassword.length);
+				LOGGER.debug("Authorization header not long enough, expected: '2', but was : '{}'!",
+						usernameAndPassword.length);
 			}
 		} else {
 			LOGGER.debug("No authorization found in header!");
 		}
 		return username;
 	}
-	
+
 	/**
 	 * 
 	 * @param headers
@@ -110,30 +110,89 @@ public class RequestHandler {
 	 */
 	public Song getSongFromHeaders(Map<String, String> headers) {
 		Song song = null;
+		int status = 0;
+
+		String genre = headers.get(SongType.GENRE.toString()).trim();
+		String title = headers.get(SongType.TITLE.toString()).trim();
+		String artist = headers.get(SongType.ARTIST.toString()).trim();
+		String lengthString = headers.get(SongType.LENGTH.toString()).trim();
+		int length = 0;
 		
-		String genre = headers.get(SongType.GENRE.toString());
-		String title = headers.get(SongType.TITLE.toString());
-		String artist = headers.get(SongType.ARTIST.toString());
-		String lengthString = headers.get(SongType.LENGTH.toString());
-		
-		LOGGER.debug("Validating values: genre: '{}', title: '{}', artist: '{}', length: '{}'!", genre, title, artist, lengthString);
-		
+		LOGGER.debug("Validating values: genre: '{}', title: '{}', artist: '{}', length: '{}'!", genre, title, artist,
+				lengthString);
 		if (genre != null && title != null && title != null && lengthString != null) {
-			try {
-				int length = Integer.parseInt(lengthString);
-				song = new Song(genre, title, artist, length);
-			} catch (NumberFormatException nfe) {
-				LOGGER.debug("Exception thrown while validating, exception message: '{}'!", nfe.getMessage());
-				LOGGER.debug("Length attribute is not a Integer but: '{}'!", lengthString);
+			
+			// Validating song genre
+			LOGGER.debug("Validating genre input...!");
+			if (genre.matches(Regex.SONG_GENRE.toString())) {
+				if (genre.length() > 0 && genre.length() <= 30) {
+					status++;
+					LOGGER.debug("Validtion for genre successful!");
+				} else {
+					LOGGER.debug("Genre input didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 0, 30, genre.length());
+				}
+			} else {
+				LOGGER.debug("Genre input didn't match with RegEx pattern: '{}'!", Regex.SONG_GENRE.toString());
 			}
+			
+			// Validating song title
+			LOGGER.debug("Validating title input...!");
+			if (title.matches(Regex.SONG_TITLE.toString())) {
+				if (title.length() > 0 && title.length() <= 75) {
+					status++;
+					LOGGER.debug("Validtion for title successful!");
+				} else {
+					LOGGER.debug("Title input title didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 0, 75, title.length());
+				}
+			} else {
+				LOGGER.debug("Title input didn't match with RegEx pattern: '{}'!", Regex.SONG_TITLE.toString());
+			}
+			
+			// Validating song artist
+			LOGGER.debug("Validating artist input...!");
+			if (artist.matches(Regex.SONG_ARTIST.toString())) {
+				if (artist.length() > 0 && artist.length() <= 50) {
+					status++;
+					LOGGER.debug("Validtion for artist successful!");
+				} else {
+					LOGGER.debug("Artist input didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 0, 50, artist.length());
+				}
+			} else {
+				LOGGER.debug("Artist input didn't match with RegEx pattern: '{}'!", Regex.SONG_ARTIST.toString());
+			}
+			
+			// Validating song length
+			LOGGER.debug("Validating length input...!");
+			if (lengthString.matches(Regex.SONG_LENGTH.toString())) {
+				try {
+					length = Integer.parseInt(lengthString);
+					status++;
+					LOGGER.debug("Validtion for song length successful!");
+				} catch (NumberFormatException nfe) {
+					LOGGER.debug("Exception thrown while validating song length, exception message: '{}'!",
+							nfe.getMessage());
+					LOGGER.debug("Length attribute is not a Integer but: '{}'!", lengthString);
+				}
+			} else {
+				LOGGER.debug("Song length didn't match with RegEx pattern: '{}'!", Regex.SONG_LENGTH.toString());
+			}
+			
+			// Validtion was successful on all input fields.
+			if (status == 4) {
+				LOGGER.debug("Creating a new Song!");
+				song = new Song(genre, title, artist, length);
+			} else {
+				LOGGER.debug("Validation failed! Amount of passsed validations: '{}'!", status);
+			}
+
 		} else {
 			LOGGER.debug("Validation failed: a Song attribute contains null!");
 		}
 		if (song != null) {
 			LOGGER.debug("Successfully created a new song!");
 		}
-		
+
 		return song;
 	}
-	
+
 }
