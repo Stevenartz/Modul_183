@@ -28,9 +28,6 @@ public class PersonDAO implements IPersonDAO {
 
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-	// TODO change user, dont use root as default, to many
-	// rights!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 	/**
 	 * 
 	 */

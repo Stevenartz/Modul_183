@@ -14,14 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.uls.dao.songDAO.ISongDAO;
 import com.uls.dao.songDAO.SongDAO;
 import com.uls.model.Song;
+import com.uls.security.JWTHelper;
 import com.uls.security.RequestHandler;
 
 import io.jsonwebtoken.Claims;
 
 /**
+ * All song requests are handled via this class.
+ * Created on 2019-09-14
  * 
- * @author sulri
- *
+ * @author Stefan Ulrich
+ * @version 1.0
  */
 @RestController
 public class SongController {
@@ -30,18 +33,27 @@ public class SongController {
 	private RequestHandler reqHandler;
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
+	/**
+	 * Default constructor.
+	 */
 	private SongController() {
 		LOGGER.debug("SongController initialized!");
 		songDAO = new SongDAO();
 		reqHandler = new RequestHandler();
 	}
 	
+	/**
+	 * If the user wants to save a song, this method is called.
+	 * 
+	 * @param headers, the headers from the request.
+	 * @return true, if it was successful, false if not.
+	 */
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/saveSong", method = RequestMethod.POST)
 	public boolean saveSong(@RequestHeader Map<String, String> headers) {
-		boolean status = false;
 		LOGGER.debug("--- New Request ---");
 		LOGGER.info("User trying to save a Song!");
+		boolean status = false;
 		
 		Object usernameClaim;
 		String username;
@@ -49,7 +61,7 @@ public class SongController {
 		Claims claims = reqHandler.checkAuthorization(headers);
 		
 		if (claims != null) {
-			usernameClaim = claims.get("username");
+			usernameClaim = claims.get(JWTHelper.USERNAME);
 			if (usernameClaim != null) {
 				username = usernameClaim.toString().trim();
 				song = reqHandler.getSongFromHeaders(headers);
@@ -72,6 +84,12 @@ public class SongController {
 		return status;
 	}
 	
+	/**
+	 * If the user wants to have all songs by his username, this method is called. 
+	 * 
+	 * @param headers, the headers from the request.
+	 * @return Either null or the songs found.
+	 */
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/getSongsByUsername", method = RequestMethod.GET)
 	public List<Song> getSongsByUsername(@RequestHeader Map<String, String> headers) {
@@ -83,7 +101,7 @@ public class SongController {
 		Claims claims = reqHandler.checkAuthorization(headers);
 		
 		if (claims != null) {
-			usernameClaim = claims.get("username");
+			usernameClaim = claims.get(JWTHelper.USERNAME);
 			if (usernameClaim != null) {
 				username = usernameClaim.toString().trim();
 				songList = songDAO.lookupAllSongsByUsername(username);

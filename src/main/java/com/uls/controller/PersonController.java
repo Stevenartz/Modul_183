@@ -14,14 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.uls.dao.personDAO.IPersonDAO;
 import com.uls.dao.personDAO.PersonDAO;
 import com.uls.model.Person;
+import com.uls.security.JWTHelper;
 import com.uls.security.RequestHandler;
 
 import io.jsonwebtoken.Claims;
 
 /**
- * should be splitted into PersonController and Authenticate Controller
+ * All person requests are handled via this class.
+ * Created on 2019-08-30
  * 
- * @author sulri
+ * @author Stefan Ulrich
+ * @version 1.0
  *
  */
 @RestController
@@ -30,9 +33,9 @@ public class PersonController {
 	private IPersonDAO personDAO;
 	private RequestHandler reqHandler;
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
-
+	
 	/**
-	 * 
+	 * Default constructor.
 	 */
 	private PersonController() {
 		LOGGER.debug("PersonController initialized!");
@@ -41,9 +44,10 @@ public class PersonController {
 	}
 
 	/**
+	 * If the user wants to have a person by his username, this method is called. 
 	 * 
-	 * @param headers
-	 * @return
+	 * @param headers, the headers from the request.
+	 * @return Either null or the person found.
 	 */
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/getPersonByUsername", method = RequestMethod.GET)
@@ -57,7 +61,7 @@ public class PersonController {
 		LOGGER.debug("Claims set to: '{}'!", claims);
 
 		if (claims != null) {
-			usernameClaim = claims.get("username");
+			usernameClaim = claims.get(JWTHelper.USERNAME);
 			if (usernameClaim != null) {
 				username = usernameClaim.toString().trim();
 				person = personDAO.lookupPersonByUsername(username);
@@ -79,8 +83,10 @@ public class PersonController {
 	}
 
 	/**
+	 * If the user wants to have all persons, this method is called. 
 	 * 
-	 * @return
+	 * @param headers, the headers from the request.
+	 * @return Either null or the persons found.
 	 */
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
@@ -103,20 +109,5 @@ public class PersonController {
 		LOGGER.debug("--- End of Request ---");
 		return personList;
 	}
-
-//	/**
-//	 * 
-//	 * @param year
-//	 * @param month
-//	 * @param dayOfMonth
-//	 * @return
-//	 */
-//	private GregorianCalendar createDate(int year, int month, int dayOfMonth) {
-//		GregorianCalendar calendar = new GregorianCalendar();
-//		calendar.set(Calendar.YEAR, year);
-//		calendar.set(Calendar.MONTH, month - 1);
-//		calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-//		return calendar;
-//	}
 
 }

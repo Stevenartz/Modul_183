@@ -9,6 +9,8 @@
 | [JWT](https://jwt.io/) | JWT Desc. |
 | [SLF4J](https://www.slf4j.org/) | SLF4J Desc. |
 
+JavaDoc creation date comments are written with ISO 8601 standard.
+
 # Mitwirkende
 
 <table>

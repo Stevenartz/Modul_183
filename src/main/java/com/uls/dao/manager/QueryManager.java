@@ -7,9 +7,11 @@ import com.uls.dao.type.PersonType;
 import com.uls.dao.type.SongType;
 
 /**
+ * This class provides SQL queries for the requests.
+ * Created on 2019-09-06
  * 
- * @author sulri
- *
+ * @author Stefan Ulrich
+ * @version 1.0
  */
 public class QueryManager {
 
@@ -18,8 +20,8 @@ public class QueryManager {
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	/**
-	 * 
-	 * @return
+	 * Creates the selectAllPersons query.
+	 * @return the selectAllPersons query.
 	 */
 	public String selectAllPersons() {
 		StringBuilder query = new StringBuilder()
@@ -42,8 +44,8 @@ public class QueryManager {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Creates the lookupPersonByUsername query.
+	 * @return the lookupPersonByUsername query.
 	 */
 	public String lookupPersonByUsername() {
 		String selectAllPersonsQuery = selectAllPersons();
@@ -58,10 +60,10 @@ public class QueryManager {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Creates the lookupAllSongsByUsername query.
+	 * @return the lookupAllSongsByUsername query.
 	 */
-	public String lookupAllSongsById() {
+	public String lookupAllSongsByUsername() {
 		StringBuilder query = new StringBuilder()
 			.append("SELECT ")
 			.append(SongType.ID)
@@ -84,8 +86,8 @@ public class QueryManager {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Creates the insertSongByUsername query.
+	 * @return the insertSongByUsername query.
 	 */
 	public String insertSongByUsername() {
 		StringBuilder query = new StringBuilder()

@@ -15,9 +15,11 @@ import com.uls.model.Person;
 import com.uls.model.Song;
 
 /**
+ * This class maps the ResultSet from the database request to the objects.
+ * Created on 2019-09-06
  * 
- * @author sulri
- *
+ * @author Stefan Ulrich
+ * @version 1.0
  */
 public class Mapper {
 

@@ -41,7 +41,7 @@ public class SongDAO implements ISongDAO {
 		Connection conn = ConnectionFactory.getConnection();
 		List<Song> songList = null;
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(queryManager.lookupAllSongsById());
+			PreparedStatement pstmt = conn.prepareStatement(queryManager.lookupAllSongsByUsername());
 			pstmt.setString(1, username);
 			songList = mapper.mapResultSetToSongList(pstmt.executeQuery());
 		} catch (SQLException sqle) {

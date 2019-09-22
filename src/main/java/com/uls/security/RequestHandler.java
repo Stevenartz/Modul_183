@@ -1,6 +1,7 @@
 package com.uls.security;
 
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.slf4j.Logger;
@@ -49,7 +50,7 @@ public class RequestHandler {
 		String authorization = headers.get("authorization");
 		String token[];
 		Claims claims = null;
-
+		
 		if (authorization != null) {
 			LOGGER.debug("Authorization found: '{}'!", authorization);
 			token = authorization.split(" ");
@@ -77,8 +78,9 @@ public class RequestHandler {
 		Person person;
 
 		if (authorization != null) {
-			LOGGER.debug("Authorization found: '{}'!", authorization);
+			LOGGER.debug("Basic authorization found: '{}'!", authorization);
 			String base64Credentials = authorization.substring("Basic".length()).trim();
+			LOGGER.debug("Decoding basic authorization!");
 			byte[] decodedBytes = Base64.decodeBase64(base64Credentials);
 			usernameAndPassword = new String(decodedBytes).split(":");
 			if (usernameAndPassword.length == 2) {
