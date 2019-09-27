@@ -26,9 +26,10 @@ public class Mapper {
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
 	/**
+	 * Maps the ResultSet to a list of persons.
 	 * 
-	 * @param rs
-	 * @return
+	 * @param rs, the ResultSet from the executed query.
+	 * @return An empty or filled list with persons.
 	 */
 	public List<Person> mapResultSetToPersonList(ResultSet rs) {
 		List<Person> personList = new ArrayList<>();
@@ -57,9 +58,10 @@ public class Mapper {
 	}
 	
 	/**
+	 * Maps the ResultSet to a list of songs.
 	 * 
-	 * @param rs
-	 * @return
+	 * @param rs, the ResultSet from the executed query.
+	 * @return An empty or filled list with songs.
 	 */
 	public List<Song> mapResultSetToSongList(ResultSet rs) {
 		List<Song> songList = new ArrayList<>();

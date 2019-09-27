@@ -3,9 +3,11 @@ package com.uls.model;
 import java.util.GregorianCalendar;
 
 /**
+ * A model class for a person.
+ * Created on 2019-08-30
  * 
- * @author sulri
- *
+ * @author Stefan Ulrich
+ * @version 1.0
  */
 public class Person {
 
@@ -13,13 +15,14 @@ public class Person {
 	private GregorianCalendar birthday;
 	
 	/**
+	 * Constructor with all attributes.
 	 * 
-	 * @param id
-	 * @param username
-	 * @param firstname
-	 * @param lastname
-	 * @param password
-	 * @param birthday
+	 * @param id, the id to set.
+	 * @param username, the username to set.
+	 * @param firstname, the firstname to set.
+	 * @param lastname, the lastname to set.
+	 * @param password, the password to set.
+	 * @param birthday, the birthday to set.
 	 */
 	public Person(String username, String firstname, String lastname, String password, GregorianCalendar birthday) {
 		super();
@@ -31,7 +34,7 @@ public class Person {
 	}
 
 	/**
-	 * 
+	 * Default constructor.
 	 */
 	public Person() {
 		

@@ -7,6 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.ComponentScan;
 
+/**
+ * This class is essential to start the program at all.
+ * Created on 2019-08-27
+ * 
+ * @author Stefan Ulrich
+ * @version 1.0
+ */
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.uls.controller"})
 public class M183Application {
@@ -18,6 +25,11 @@ public class M183Application {
 	// keystore-Kennwort: Yf8aKPJAoMRQ
 	// Schlüsselkennwort für <tomcat>: ro3ELPTWgCbZ
 	
+	/**
+	 * Start of the whole program.
+	 * 
+	 * @param args, just the JVM args.
+	 */
 	public static void main(String[] args) {
 		final Logger LOGGER = LoggerFactory.getLogger(M183Application.class);
 		new SpringApplicationBuilder()

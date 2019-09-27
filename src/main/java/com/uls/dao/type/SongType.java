@@ -1,5 +1,12 @@
 package com.uls.dao.type;
 
+/**
+ * This enum provides all the attributes of a song to avoid potential typos.
+ * Created on 2019-09-15
+ * 
+ * @author Stefan Ulrich
+ * @version 1.0
+ */
 public enum SongType {
 
 	ID("songId"),
@@ -11,6 +18,11 @@ public enum SongType {
 	
 	private String type;
 	
+	/**
+	 * Default constructor.
+	 * 
+	 * @param type, the type to set.
+	 */
 	SongType(String type) {
 		this.type = type;
 	}

@@ -17,9 +17,11 @@ import com.uls.dao.mapper.Mapper;
 import com.uls.model.Person;
 
 /**
+ * This class executes all database queries specific to the user.
+ * Created on 2019-09-03
  * 
- * @author sulri
- *
+ * @author Stefan Ulrich
+ * @version 1.0
  */
 public class PersonDAO implements IPersonDAO {
 
@@ -29,16 +31,18 @@ public class PersonDAO implements IPersonDAO {
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
 	/**
-	 * 
+	 * Default constructor.
 	 */
 	public PersonDAO() {
 		queryManager = new QueryManager();
 		mapper = new Mapper();
 	}
 
-
 	/**
+	 * Looks up exactly one person based on his username.
 	 * 
+	 * @param username, the username to search for.
+	 * @return null or the person found.
 	 */
 	@Override
 	public Person lookupPersonByUsername(String username) {
@@ -79,7 +83,9 @@ public class PersonDAO implements IPersonDAO {
 	}
 
 	/**
-	 * TODO LOGGING
+	 * Selects all persons in the database.
+	 * 
+	 * @return null or a list with persons.
 	 */
 	@Override
 	public List<Person> selectAllPersons() {
@@ -94,6 +100,5 @@ public class PersonDAO implements IPersonDAO {
 
 		return personList;
 	}
-
 
 }

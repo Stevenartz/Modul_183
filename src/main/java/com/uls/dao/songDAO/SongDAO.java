@@ -14,27 +14,32 @@ import com.uls.dao.mapper.Mapper;
 import com.uls.model.Song;
 
 /**
+ * This class executes all database queries specific to the songs.
+ * Created on 2019-09-15
  * 
- * @author sulri
- *
+ * @author Stefan Ulrich
+ * @version 1.0
  */
 public class SongDAO implements ISongDAO {
 
 	private QueryManager queryManager;
 	private Mapper mapper;
-	
+
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
-	
+
 	/**
-	 * 
+	 * Default constructor.
 	 */
 	public SongDAO() {
 		queryManager = new QueryManager();
 		mapper = new Mapper();
 	}
 
-	/**a
+	/**
+	 * Looks up all songs based on the username.
 	 * 
+	 * @param username, the username for looking up the songs.
+	 * @return null or a list with the songs based on the username.
 	 */
 	@Override
 	public List<Song> lookupAllSongsByUsername(String username) {
@@ -50,6 +55,13 @@ public class SongDAO implements ISongDAO {
 		return songList;
 	}
 
+	/**
+	 * Inserts a song to a person.
+	 * 
+	 * @param username to save the song to the right person.
+	 * @param song, the song to save
+	 * @return true if a row has been affected, false if not.
+	 */
 	@Override
 	public boolean insertSongByUsername(String username, Song song) {
 		Connection conn = ConnectionFactory.getConnection();
@@ -68,10 +80,10 @@ public class SongDAO implements ISongDAO {
 			sqle.printStackTrace();
 		}
 		System.out.println(queryManager.insertSongByUsername());
-		
+
 		System.out.println("inserting song: " + song + " with username: " + username);
-		
+
 		return status;
 	}
-	
+
 }

@@ -1,9 +1,11 @@
 package com.uls.model;
 
 /**
+ * A model class for a song.
+ * Created on 2019-09-14
  * 
- * @author sulri
- *
+ * @author Stefan Ulrich
+ * @version 1.0
  */
 public class Song {
 
@@ -12,11 +14,12 @@ public class Song {
 	private int length;
 
 	/**
+	 * Constructor with all attributes, expect id.
 	 * 
-	 * @param genre
-	 * @param title
-	 * @param artist
-	 * @param length
+	 * @param genre, the genre to set.
+	 * @param title, the title to set.
+	 * @param artist, the artist to set.
+	 * @param length, the length to set.
 	 */
 	public Song(String genre, String title, String artist, int length) {
 		super();
@@ -27,13 +30,11 @@ public class Song {
 	}
 
 	/**
-	 * 
+	 * Default constructor.
 	 */
 	public Song() {
 
 	}
-	
-	
 
 	/**
 	 * @return the id
