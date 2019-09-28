@@ -1,7 +1,6 @@
 package com.uls.security;
 
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.slf4j.Logger;
@@ -16,9 +15,10 @@ import com.uls.model.Song;
 import io.jsonwebtoken.Claims;
 
 /**
+ * This class accepts all request's and handles these. Created on 2019-09-10
  * 
- * @author Stefan
- *
+ * @author Stefan Ulrich
+ * @version 1.0
  */
 public class RequestHandler {
 
@@ -33,7 +33,7 @@ public class RequestHandler {
 	final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
 	/**
-	 * 
+	 * Default constructor.
 	 */
 	public RequestHandler() {
 		jwtHelper = new JWTHelper();
@@ -42,15 +42,17 @@ public class RequestHandler {
 	}
 
 	/**
+	 * Checks if the user is authorized and the if the JWT is still valid.
 	 * 
-	 * @param headers
-	 * @return
+	 * @param headers,
+	 *            the headers of a JWT.
+	 * @return null or the claims of a JWT.
 	 */
 	public Claims checkAuthorization(Map<String, String> headers) {
 		String authorization = headers.get("authorization");
 		String token[];
 		Claims claims = null;
-		
+
 		if (authorization != null) {
 			LOGGER.debug("Authorization found: '{}'!", authorization);
 			token = authorization.split(" ");
@@ -66,9 +68,12 @@ public class RequestHandler {
 	}
 
 	/**
+	 * Checks if the username and password is present in the database and
+	 * matches each other.
 	 * 
-	 * @param headers
-	 * @return
+	 * @param headers,
+	 *            the headers of a JWT.
+	 * @return null or the username.
 	 */
 	public String checkLogin(Map<String, String> headers) {
 		String username = null;
@@ -106,9 +111,10 @@ public class RequestHandler {
 	}
 
 	/**
+	 * Checks if the user input of a song is valid. If so, a song will be returned.
 	 * 
-	 * @param headers
-	 * @return
+	 * @param headers, the headers of a JWT.
+	 * @return null or a Song.
 	 */
 	public Song getSongFromHeaders(Map<String, String> headers) {
 		Song song = null;
@@ -119,11 +125,11 @@ public class RequestHandler {
 		String artist = headers.get(SongType.ARTIST.toString()).trim();
 		String lengthString = headers.get(SongType.LENGTH.toString()).trim();
 		int length = 0;
-		
+
 		LOGGER.debug("Validating values: genre: '{}', title: '{}', artist: '{}', length: '{}'!", genre, title, artist,
 				lengthString);
 		if (genre != null && title != null && title != null && lengthString != null) {
-			
+
 			// Validating song genre
 			LOGGER.debug("Validating genre input...!");
 			if (genre.matches(Regex.SONG_GENRE.toString())) {
@@ -131,12 +137,14 @@ public class RequestHandler {
 					status++;
 					LOGGER.debug("Validtion for genre successful!");
 				} else {
-					LOGGER.debug("Genre input didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 0, 30, genre.length());
+					LOGGER.debug(
+							"Genre input didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 0,
+							30, genre.length());
 				}
 			} else {
 				LOGGER.debug("Genre input didn't match with RegEx pattern: '{}'!", Regex.SONG_GENRE.toString());
 			}
-			
+
 			// Validating song title
 			LOGGER.debug("Validating title input...!");
 			if (title.matches(Regex.SONG_TITLE.toString())) {
@@ -144,12 +152,14 @@ public class RequestHandler {
 					status++;
 					LOGGER.debug("Validtion for title successful!");
 				} else {
-					LOGGER.debug("Title input title didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 0, 75, title.length());
+					LOGGER.debug(
+							"Title input title didn't match with length. Expected between: '{}' and '{}', but was: '{}'!",
+							0, 75, title.length());
 				}
 			} else {
 				LOGGER.debug("Title input didn't match with RegEx pattern: '{}'!", Regex.SONG_TITLE.toString());
 			}
-			
+
 			// Validating song artist
 			LOGGER.debug("Validating artist input...!");
 			if (artist.matches(Regex.SONG_ARTIST.toString())) {
@@ -157,12 +167,14 @@ public class RequestHandler {
 					status++;
 					LOGGER.debug("Validtion for artist successful!");
 				} else {
-					LOGGER.debug("Artist input didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 0, 50, artist.length());
+					LOGGER.debug(
+							"Artist input didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 0,
+							50, artist.length());
 				}
 			} else {
 				LOGGER.debug("Artist input didn't match with RegEx pattern: '{}'!", Regex.SONG_ARTIST.toString());
 			}
-			
+
 			// Validating song length
 			LOGGER.debug("Validating length input...!");
 			if (lengthString.matches(Regex.SONG_LENGTH.toString())) {
@@ -178,7 +190,7 @@ public class RequestHandler {
 			} else {
 				LOGGER.debug("Song length didn't match with RegEx pattern: '{}'!", Regex.SONG_LENGTH.toString());
 			}
-			
+
 			// Validtion was successful on all input fields.
 			if (status == 4) {
 				LOGGER.debug("Creating a new Song!");

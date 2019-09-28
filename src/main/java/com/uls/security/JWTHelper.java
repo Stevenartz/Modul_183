@@ -13,30 +13,33 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
+ * This class can generate and verify a JWT token.
+ * Created on 2019-09-10
  * 
- * @author sulri
- *
+ * @author Stefan Ulrich
+ * @version 1.0
  */
 public class JWTHelper {
 
-	public final static String USERNAME = "sub"; 
+	public final static String USERNAME = "sub"; //subject, default attribute of JWT token
 	private final String JWT_SIGNATURE = "8kw8$Bl3XFhyx5&4gA@!WnKe&5!vNYbc4gorku!L";
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	/**
-	 * 
+	 * Default constructor.
 	 */
 	public JWTHelper() {
 		
 	}
 	
 	/**
+	 * Generates a JWT token based on the parameters
 	 * 
-	 * @param claims
-	 * @param subject
-	 * @param issuedAtDate
-	 * @param expirationDate
-	 * @return
+	 * @param claims, the claims to set.
+	 * @param subject, the subject to set.
+	 * @param issuedAtDate, the issuedAtDate to set.
+	 * @param expirationDate, the expirationDate to set.
+	 * @return the JWT token.
 	 */
 	public String createJWT(Map<String, Object> claims, String subject, Date issuedAtDate, Date expirationDate) {
 		return Jwts
@@ -51,9 +54,10 @@ public class JWTHelper {
 	}
 	
 	/**
+	 * Verifies a JWT token.
 	 * 
-	 * @param jwt
-	 * @return
+	 * @param jwt, the JWT token.
+	 * @return the Claims of the JWT token or null.
 	 */
 	public Claims verifyToken(String jwt) {
 		return Jwts
