@@ -71,7 +71,6 @@ public class AuthenticationController {
 					new Date(System.currentTimeMillis() + 60 * 60 * 1000));
 
 			LOGGER.debug("Token created: '{}'!", token);
-			LOGGER.info("A new JWT has been generated!");
 			LOGGER.info("User successfully logged in!");
 		} else {
 			try {

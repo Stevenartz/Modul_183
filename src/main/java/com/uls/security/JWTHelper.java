@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
 
 /**
  * This class can generate and verify a JWT token.
@@ -42,6 +43,7 @@ public class JWTHelper {
 	 * @return the JWT token.
 	 */
 	public String createJWT(Map<String, Object> claims, String subject, Date issuedAtDate, Date expirationDate) {
+		LOGGER.debug("Creating a JWT!");
 		return Jwts
 				.builder()
 				.setClaims(claims)
@@ -60,11 +62,22 @@ public class JWTHelper {
 	 * @return the Claims of the JWT token or null.
 	 */
 	public Claims verifyToken(String jwt) {
-		return Jwts
-				.parser()
-				.setSigningKey(DatatypeConverter.parseBase64Binary(JWT_SIGNATURE))
-				.parseClaimsJws(jwt)
-				.getBody();
+		LOGGER.debug("Verifying JWT!");
+		Claims claims = null;
+		try {
+			claims = Jwts
+					.parser()
+					.setSigningKey(DatatypeConverter.parseBase64Binary(JWT_SIGNATURE))
+					.parseClaimsJws(jwt)
+					.getBody();
+		} catch (SignatureException e) {
+			LOGGER.debug("Failed to verify token, Msg: '{}'!", e.getMessage());
+			LOGGER.warn("JWT is not valid!");
+		}
+		if (claims != null) {
+			LOGGER.debug("Verification successful!");
+		}
+		return claims;
 	}
 	
 }

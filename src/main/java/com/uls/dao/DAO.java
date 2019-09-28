@@ -15,7 +15,7 @@ public class DAO {
 		for (Person p : personDAO.selectAllPersons()) {
 			System.out.println(p);
 		}
-		System.out.println(">>> personDAO.lookupPersonByUsername(\"Samu\")");
+		System.out.println(">>> personDAOze.lookupPersonByUsername(\"Samu\")");
 		System.out.println(personDAO.lookupPersonByUsername("Samu"));
 		
 		System.out.println(">>> songDAO.lookupAllSongsByUsername(1)");
