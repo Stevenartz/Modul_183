@@ -45,12 +45,29 @@ public class SongDAO implements ISongDAO {
 	public List<Song> lookupAllSongsByUsername(String username) {
 		Connection conn = ConnectionFactory.getConnection();
 		List<Song> songList = null;
+		
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(queryManager.lookupAllSongsByUsername());
-			pstmt.setString(1, username);
-			songList = mapper.mapResultSetToSongList(pstmt.executeQuery());
+			if (username != null) {
+				if (conn != null) {
+					PreparedStatement pstmt = conn.prepareStatement(queryManager.lookupAllSongsByUsername());
+					pstmt.setString(1, username);
+					LOGGER.debug("Setting parameter 1 with value: '{}'!", username);
+					LOGGER.debug("Statement: '{}'!", pstmt);
+					songList = mapper.mapResultSetToSongList(pstmt.executeQuery());
+					if (songList != null) {
+						LOGGER.info("Successfully found songs for person with username: '{}'!", username);
+					} else {
+						LOGGER.debug("songList after SQL Statement still null!");
+					}
+				} else {
+					LOGGER.warn("Connection not active, connection is null!");
+				}
+			} else {
+				LOGGER.debug("username cannot be null!");
+			}
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
+			LOGGER.error("Failed to execute lookupAllSongsByUsername({}), Msg: '{}'!", username, sqle.getMessage());
 		}
 		return songList;
 	}
@@ -67,22 +84,36 @@ public class SongDAO implements ISongDAO {
 		Connection conn = ConnectionFactory.getConnection();
 		boolean status = false;
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(queryManager.insertSongByUsername());
-			pstmt.setString(1, username);
-			pstmt.setString(2, song.getGenre());
-			pstmt.setString(3, song.getTitle());
-			pstmt.setString(4, song.getArtist());
-			pstmt.setInt(5, song.getLength());
-			if (pstmt.executeUpdate() == 1) {
-				status = true;
+			if (username != null && song != null) {
+				if (conn != null) {
+					PreparedStatement pstmt = conn.prepareStatement(queryManager.insertSongByUsername());
+					pstmt.setString(1, username);
+					pstmt.setString(2, song.getGenre());
+					pstmt.setString(3, song.getTitle());
+					pstmt.setString(4, song.getArtist());
+					pstmt.setInt(5, song.getLength());
+					LOGGER.debug("Setting parameter 1 with value: '{}'!", username);
+					LOGGER.debug("Setting parameter 2 with value: '{}'!", song.getGenre());
+					LOGGER.debug("Setting parameter 3 with value: '{}'!", song.getTitle());
+					LOGGER.debug("Setting parameter 4 with value: '{}'!", song.getArtist());
+					LOGGER.debug("Setting parameter 5 with value: '{}'!", song.getLength());
+					LOGGER.debug("Statement: '{}'!", pstmt);
+					if (pstmt.executeUpdate() == 1) {
+						status = true;
+						LOGGER.debug("Successfully inserted new song: '{}', for person with username: '{}'!", song, username);
+					} else {
+						LOGGER.debug("User tried to insert a new song, but no rows have been affected!");
+					}
+				} else {
+					LOGGER.warn("Connection not active, connection is null!");
+				}
+			} else {
+				LOGGER.debug("username or song cannot be null!");
 			}
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
+			LOGGER.error("Failed to execute insertSongByUsername({}, {}), Msg: '{}'!", username, song, sqle.getMessage());
 		}
-		System.out.println(queryManager.insertSongByUsername());
-
-		System.out.println("inserting song: " + song + " with username: " + username);
-
 		return status;
 	}
 

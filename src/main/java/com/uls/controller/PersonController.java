@@ -1,6 +1,5 @@
 package com.uls.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -80,34 +79,6 @@ public class PersonController {
 		}
 		LOGGER.debug("--- End of Request ---");
 		return person;
-	}
-
-	/**
-	 * If the user wants to have all persons, this method is called. 
-	 * 
-	 * @param headers, the headers from the request.
-	 * @return Either null or the persons found.
-	 */
-	@CrossOrigin(origins = "http://localhost:3000")
-	@RequestMapping(value = "/persons", method = RequestMethod.GET)
-	public List<Person> getPersons(@RequestHeader Map<String, String> headers) {
-		LOGGER.debug("--- New Request ---");
-		List<Person> personList = null;
-		LOGGER.info("User trying to get a List with all persons!");
-		if (reqHandler.checkAuthorization(headers) != null) {
-			LOGGER.debug("Select all Persons from database!");
-			personList = personDAO.selectAllPersons();
-			if (personList != null) {
-				LOGGER.info("List with persons successfully filled!");
-			} else {
-				LOGGER.info("List with persons empty!");
-			}
-		} else {
-			LOGGER.debug("No Claims found in Token!");
-			LOGGER.info("Wasn't able to load persons!");
-		}
-		LOGGER.debug("--- End of Request ---");
-		return personList;
 	}
 
 }

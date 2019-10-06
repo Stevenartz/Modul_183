@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `modul_183` /*!40100 DEFAULT CHARACTER SET utf8 *
 USE `modul_183`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: modul_183
+-- Host: 127.0.0.1    Database: modul_183
 -- ------------------------------------------------------
 -- Server version	5.7.18-log
 
@@ -35,7 +35,7 @@ CREATE TABLE `songs` (
   UNIQUE KEY `songId_UNIQUE` (`songId`),
   KEY `fk_songs_persons_idx` (`persons_username`),
   CONSTRAINT `fk_songs_persons` FOREIGN KEY (`persons_username`) REFERENCES `persons` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `songs` (
 
 LOCK TABLES `songs` WRITE;
 /*!40000 ALTER TABLE `songs` DISABLE KEYS */;
-INSERT INTO `songs` VALUES (1,'Stevenartz','pop','titel','artist',65),(2,'Samu','rock','titel2','artist2',120);
+INSERT INTO `songs` VALUES (2,'RicRam','rock','titel2','artist2',120),(57,'Stevenartz','pop','Old Town Road','Lil Nas X, Billy Ray Cyrus, Diplo',204),(58,'Stevenartz','pop','Million Pieces  M 22 Remix','Bastille, M-22',166),(59,'Stevenartz','hiphop','Valentino','24kGoldn',179),(60,'Stevenartz','hiphop','On the Road','Post Malone',218),(61,'Stevenartz','pop','So Long','ESCPR',175);
 /*!40000 ALTER TABLE `songs` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-18 19:10:27
+-- Dump completed on 2019-10-06 14:35:23

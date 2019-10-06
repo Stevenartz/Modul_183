@@ -25,6 +25,7 @@ public class RequestHandler {
 	private JWTHelper jwtHelper;
 	private IPersonDAO personDAO;
 	private SHA512Hasher sha512Hasher;
+	private HTMLEscaper htmlEscaper;
 
 	private final int TOKEN = 1;
 	private final int USERNAME = 0;
@@ -39,6 +40,7 @@ public class RequestHandler {
 		jwtHelper = new JWTHelper();
 		personDAO = new PersonDAO();
 		sha512Hasher = new SHA512Hasher();
+		htmlEscaper = new HTMLEscaper();
 	}
 
 	/**
@@ -49,7 +51,7 @@ public class RequestHandler {
 	 * @return null or the claims of a JWT.
 	 */
 	public Claims checkAuthorization(Map<String, String> headers) {
-		String authorization = headers.get("authorization");
+		String authorization = htmlEscaper.escapeHTML(headers.get("authorization"));
 		String token[];
 		Claims claims = null;
 
@@ -78,7 +80,7 @@ public class RequestHandler {
 	public String checkLogin(Map<String, String> headers) {
 		String username = null;
 
-		String authorization = headers.get("authorization");
+		String authorization = htmlEscaper.escapeHTML(headers.get("authorization"));
 		String usernameAndPassword[];
 		Person person;
 
@@ -120,10 +122,10 @@ public class RequestHandler {
 		Song song = null;
 		int status = 0;
 
-		String genre = headers.get(SongType.GENRE.toString()).trim();
-		String title = headers.get(SongType.TITLE.toString()).trim();
-		String artist = headers.get(SongType.ARTIST.toString()).trim();
-		String lengthString = headers.get(SongType.LENGTH.toString()).trim();
+		String genre = htmlEscaper.escapeHTML(headers.get(SongType.GENRE.toString()).trim());
+		String title = htmlEscaper.escapeHTML(headers.get(SongType.TITLE.toString()).trim());
+		String artist = htmlEscaper.escapeHTML(headers.get(SongType.ARTIST.toString()).trim());
+		String lengthString = htmlEscaper.escapeHTML(headers.get(SongType.LENGTH.toString()).trim());
 		int length = 0;
 
 		LOGGER.debug("Validating values: genre: '{}', title: '{}', artist: '{}', length: '{}'!", genre, title, artist,
@@ -148,13 +150,13 @@ public class RequestHandler {
 			// Validating song title
 			LOGGER.debug("Validating title input...!");
 			if (title.matches(Regex.SONG_TITLE.toString())) {
-				if (title.length() > 0 && title.length() <= 75) {
+				if (title.length() > 2 && title.length() <= 75) {
 					status++;
 					LOGGER.debug("Validtion for title successful!");
 				} else {
 					LOGGER.debug(
 							"Title input title didn't match with length. Expected between: '{}' and '{}', but was: '{}'!",
-							0, 75, title.length());
+							2, 75, title.length());
 				}
 			} else {
 				LOGGER.debug("Title input didn't match with RegEx pattern: '{}'!", Regex.SONG_TITLE.toString());
@@ -163,12 +165,12 @@ public class RequestHandler {
 			// Validating song artist
 			LOGGER.debug("Validating artist input...!");
 			if (artist.matches(Regex.SONG_ARTIST.toString())) {
-				if (artist.length() > 0 && artist.length() <= 50) {
+				if (artist.length() > 2 && artist.length() <= 50) {
 					status++;
 					LOGGER.debug("Validtion for artist successful!");
 				} else {
 					LOGGER.debug(
-							"Artist input didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 0,
+							"Artist input didn't match with length. Expected between: '{}' and '{}', but was: '{}'!", 2,
 							50, artist.length());
 				}
 			} else {

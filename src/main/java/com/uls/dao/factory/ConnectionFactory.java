@@ -41,7 +41,7 @@ public class ConnectionFactory {
 				if (connection != null) {
 					LOGGER.debug(
 							"Successfully created connection: '{}', with URL: '{}', Username: '{}' and Password: '{}'!",
-							connection, URL, USERNAME, PASSWORD);
+							connection, URL, USERNAME, PASSWORD.replaceAll(".", "*"));
 					LOGGER.info("Successfully created a new connection to database!");
 				}
 			} catch (SQLException sqle) {

@@ -1,15 +1,128 @@
-2019-09-10 | 20:19:57.557 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
-2019-09-10 | 20:19:57.560 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
-2019-09-10 | 20:19:57.868 | main |  INFO | c.u.m183.M183Application | Application successfully started and running!
-2019-09-10 | 20:20:32.645 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | User trying to login!
-2019-09-10 | 20:20:32.645 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Basic U3RldmVuYXJ0ejpwYXNzd29yZA=='!
-2019-09-10 | 20:20:32.648 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Creating new database connection!
-2019-09-10 | 20:20:32.749 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Successfully created connection: 'com.mysql.cj.jdbc.ConnectionImpl@5951bdc4', with URL: 'jdbc:mysql://localhost:3306/modul_183?serverTimezone=UTC', Username: 'root' and Password: 'password'!
-2019-09-10 | 20:20:32.749 | http-nio-8080-exec-2 |  INFO | c.u.d.f.ConnectionFactory | Successfully created a new connection to database!
-2019-09-10 | 20:20:32.750 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT personId, username, firstname, lastname, password, birthday FROM persons;'
-2019-09-10 | 20:20:32.750 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT personId, username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
-2019-09-10 | 20:20:32.769 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | User: 'Stevenartz' successfully authenticated!
-2019-09-10 | 20:20:32.769 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | Variable 'username' set to : 'Stevenartz'!
-2019-09-10 | 20:20:32.929 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | Token created: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWJqZWVjdCIsImV4cCI6MTU2ODE0MzIzMiwiaWF0IjoxNTY4MTM5NjMyLCJ1c2VybmFtZSI6IlN0ZXZlbmFydHoifQ.MNfizZrbbLrzaOYqMF-wE2D6HTBwJyVKGR00wwf8B4HTrurNusZKtLtWST3FenLIK0aRyoyniDSUBX7G1KkV-w'!
-2019-09-10 | 20:20:32.930 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | A new JWT has been generated!
-2019-09-10 | 20:20:32.930 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | User successfully logged in!
+2019-10-06 | 14:53:10.555 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
+2019-10-06 | 14:53:10.566 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
+2019-10-06 | 14:53:10.567 | main | DEBUG | c.u.c.SongController | SongController initialized!
+2019-10-06 | 14:53:10.911 | main |  INFO | c.u.m183.M183Application | Application started and running!
+2019-10-06 | 14:53:49.146 | http-nio-8080-exec-2 | DEBUG | c.u.c.PersonController | --- New Request ---
+2019-10-06 | 14:53:49.146 | http-nio-8080-exec-2 |  INFO | c.u.c.PersonController | User trying to get a Person by his username!
+2019-10-06 | 14:53:49.146 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer undefined'!
+2019-10-06 | 14:53:49.147 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer undefined'!
+2019-10-06 | 14:53:49.147 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-10-06 | 14:53:55.120 | http-nio-8080-exec-4 | DEBUG | c.u.c.AuthenticationController | --- New Request ---
+2019-10-06 | 14:53:55.120 | http-nio-8080-exec-4 |  INFO | c.u.c.AuthenticationController | User trying to login!
+2019-10-06 | 14:53:55.120 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Basic U3RldmVuYXJ0ejpwYXNzd29yZA=='!
+2019-10-06 | 14:53:55.120 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Basic authorization found: 'Basic U3RldmVuYXJ0ejpwYXNzd29yZA=='!
+2019-10-06 | 14:53:55.120 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Decoding basic authorization!
+2019-10-06 | 14:53:55.123 | http-nio-8080-exec-4 | DEBUG | c.u.d.f.ConnectionFactory | Creating new database connection!
+2019-10-06 | 14:53:55.238 | http-nio-8080-exec-4 | DEBUG | c.u.d.f.ConnectionFactory | Successfully created connection: 'com.mysql.cj.jdbc.ConnectionImpl@58f4414d', with URL: 'jdbc:mysql://localhost:3306/modul_183?serverTimezone=UTC', Username: 'stefan' and Password: '************'!
+2019-10-06 | 14:53:55.238 | http-nio-8080-exec-4 |  INFO | c.u.d.f.ConnectionFactory | Successfully created a new connection to database!
+2019-10-06 | 14:53:55.239 | http-nio-8080-exec-4 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-10-06 | 14:53:55.239 | http-nio-8080-exec-4 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-10-06 | 14:53:55.249 | http-nio-8080-exec-4 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-10-06 | 14:53:55.249 | http-nio-8080-exec-4 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-10-06 | 14:53:55.255 | http-nio-8080-exec-4 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-10-06 | 14:53:55.256 | http-nio-8080-exec-4 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-10-06 | 14:53:55.256 | http-nio-8080-exec-4 | DEBUG | c.u.security.SHA512Hasher | Hashing text: 'password' to SHA-512!
+2019-10-06 | 14:53:55.257 | http-nio-8080-exec-4 | DEBUG | c.u.security.SHA512Hasher | Successfully hashed!
+2019-10-06 | 14:53:55.257 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | User: 'Stevenartz' tried to login with wrong password!
+2019-10-06 | 14:53:55.257 | http-nio-8080-exec-4 | DEBUG | c.u.c.AuthenticationController | Variable 'username' set to : 'null'!
+2019-10-06 | 14:53:55.257 | http-nio-8080-exec-4 |  INFO | c.u.c.AuthenticationController | Displayed unauthorized page for user!
+2019-10-06 | 14:53:55.257 | http-nio-8080-exec-4 | DEBUG | c.u.c.AuthenticationController | --- End of Request ---
+2019-10-06 | 14:54:12.941 | http-nio-8080-exec-5 | DEBUG | c.u.c.AuthenticationController | --- New Request ---
+2019-10-06 | 14:54:12.941 | http-nio-8080-exec-5 |  INFO | c.u.c.AuthenticationController | User trying to login!
+2019-10-06 | 14:54:12.941 | http-nio-8080-exec-5 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Basic U3RldmVuYXJ0ejprSmNVS3JHSWJ6Tmw='!
+2019-10-06 | 14:54:12.941 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Basic authorization found: 'Basic U3RldmVuYXJ0ejprSmNVS3JHSWJ6Tmw='!
+2019-10-06 | 14:54:12.942 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Decoding basic authorization!
+2019-10-06 | 14:54:12.942 | http-nio-8080-exec-5 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-10-06 | 14:54:12.942 | http-nio-8080-exec-5 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-10-06 | 14:54:12.942 | http-nio-8080-exec-5 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-10-06 | 14:54:12.942 | http-nio-8080-exec-5 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-10-06 | 14:54:12.943 | http-nio-8080-exec-5 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-10-06 | 14:54:12.943 | http-nio-8080-exec-5 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-10-06 | 14:54:12.943 | http-nio-8080-exec-5 | DEBUG | c.u.security.SHA512Hasher | Hashing text: 'kJcUKrGIbzNl' to SHA-512!
+2019-10-06 | 14:54:12.944 | http-nio-8080-exec-5 | DEBUG | c.u.security.SHA512Hasher | Successfully hashed!
+2019-10-06 | 14:54:12.944 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | User: 'Stevenartz' successfully authenticated!
+2019-10-06 | 14:54:12.944 | http-nio-8080-exec-5 | DEBUG | c.u.c.AuthenticationController | Variable 'username' set to : 'Stevenartz'!
+2019-10-06 | 14:54:12.944 | http-nio-8080-exec-5 | DEBUG | c.uls.security.JWTHelper | Creating a JWT!
+2019-10-06 | 14:54:13.080 | http-nio-8080-exec-5 | DEBUG | c.u.c.AuthenticationController | Token created: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:13.080 | http-nio-8080-exec-5 |  INFO | c.u.c.AuthenticationController | User successfully logged in!
+2019-10-06 | 14:54:13.080 | http-nio-8080-exec-5 | DEBUG | c.u.c.AuthenticationController | --- End of Request ---
+2019-10-06 | 14:54:13.105 | http-nio-8080-exec-6 | DEBUG | c.u.c.PersonController | --- New Request ---
+2019-10-06 | 14:54:13.105 | http-nio-8080-exec-6 |  INFO | c.u.c.PersonController | User trying to get a Person by his username!
+2019-10-06 | 14:54:13.106 | http-nio-8080-exec-6 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:13.106 | http-nio-8080-exec-6 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:13.106 | http-nio-8080-exec-6 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-10-06 | 14:54:13.126 | http-nio-8080-exec-6 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-10-06 | 14:54:13.126 | http-nio-8080-exec-6 | DEBUG | c.u.c.PersonController | Claims set to: '{sub=Stevenartz, exp=1570370052, iat=1570366452}'!
+2019-10-06 | 14:54:13.127 | http-nio-8080-exec-6 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-10-06 | 14:54:13.127 | http-nio-8080-exec-6 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-10-06 | 14:54:13.127 | http-nio-8080-exec-6 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-10-06 | 14:54:13.127 | http-nio-8080-exec-6 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-10-06 | 14:54:13.127 | http-nio-8080-exec-6 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-10-06 | 14:54:13.128 | http-nio-8080-exec-6 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-10-06 | 14:54:13.128 | http-nio-8080-exec-6 | DEBUG | c.u.c.PersonController | Successfully found person with username: 'Stevenartz'!
+2019-10-06 | 14:54:13.128 | http-nio-8080-exec-6 |  INFO | c.u.c.PersonController | Person found and set!
+2019-10-06 | 14:54:13.128 | http-nio-8080-exec-6 | DEBUG | c.u.c.PersonController | --- End of Request ---
+2019-10-06 | 14:54:13.160 | http-nio-8080-exec-7 | DEBUG | c.u.c.PersonController | --- New Request ---
+2019-10-06 | 14:54:13.160 | http-nio-8080-exec-7 |  INFO | c.u.c.PersonController | User trying to get a Person by his username!
+2019-10-06 | 14:54:13.160 | http-nio-8080-exec-7 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:13.160 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:13.160 | http-nio-8080-exec-7 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-10-06 | 14:54:13.163 | http-nio-8080-exec-7 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-10-06 | 14:54:13.164 | http-nio-8080-exec-7 | DEBUG | c.u.c.PersonController | Claims set to: '{sub=Stevenartz, exp=1570370052, iat=1570366452}'!
+2019-10-06 | 14:54:13.164 | http-nio-8080-exec-7 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-10-06 | 14:54:13.164 | http-nio-8080-exec-7 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-10-06 | 14:54:13.164 | http-nio-8080-exec-7 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-10-06 | 14:54:13.164 | http-nio-8080-exec-7 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-10-06 | 14:54:13.164 | http-nio-8080-exec-7 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-10-06 | 14:54:13.164 | http-nio-8080-exec-7 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-10-06 | 14:54:13.165 | http-nio-8080-exec-7 | DEBUG | c.u.c.PersonController | Successfully found person with username: 'Stevenartz'!
+2019-10-06 | 14:54:13.165 | http-nio-8080-exec-7 |  INFO | c.u.c.PersonController | Person found and set!
+2019-10-06 | 14:54:13.165 | http-nio-8080-exec-7 | DEBUG | c.u.c.PersonController | --- End of Request ---
+2019-10-06 | 14:54:16.038 | http-nio-8080-exec-9 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-10-06 | 14:54:16.038 | http-nio-8080-exec-9 |  INFO | c.u.c.SongController | User trying to get a List with all his songs!
+2019-10-06 | 14:54:16.038 | http-nio-8080-exec-9 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:16.038 | http-nio-8080-exec-9 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:16.038 | http-nio-8080-exec-9 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-10-06 | 14:54:16.040 | http-nio-8080-exec-9 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-10-06 | 14:54:16.040 | http-nio-8080-exec-9 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupAllSongsById query: 'SELECT songId, genre, title, artist, length FROM songs WHERE persons_username = ?;'
+2019-10-06 | 14:54:16.040 | http-nio-8080-exec-9 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-10-06 | 14:54:16.040 | http-nio-8080-exec-9 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT songId, genre, title, artist, length FROM songs WHERE persons_username = 'Stevenartz';'!
+2019-10-06 | 14:54:16.042 | http-nio-8080-exec-9 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to song list!
+2019-10-06 | 14:54:16.042 | http-nio-8080-exec-9 |  INFO | c.uls.dao.songDAO.SongDAO | Successfully found songs for person with username: 'Stevenartz'!
+2019-10-06 | 14:54:16.042 | http-nio-8080-exec-9 | DEBUG | c.u.c.SongController | Successfully found songs with username: 'Stevenartz'!
+2019-10-06 | 14:54:16.042 | http-nio-8080-exec-9 |  INFO | c.u.c.SongController | Songs found and set!
+2019-10-06 | 14:54:16.042 | http-nio-8080-exec-9 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-10-06 | 14:54:18.160 | http-nio-8080-exec-10 | DEBUG | c.u.c.PersonController | --- New Request ---
+2019-10-06 | 14:54:18.161 | http-nio-8080-exec-10 |  INFO | c.u.c.PersonController | User trying to get a Person by his username!
+2019-10-06 | 14:54:18.161 | http-nio-8080-exec-10 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:18.161 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:18.161 | http-nio-8080-exec-10 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-10-06 | 14:54:18.162 | http-nio-8080-exec-10 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-10-06 | 14:54:18.162 | http-nio-8080-exec-10 | DEBUG | c.u.c.PersonController | Claims set to: '{sub=Stevenartz, exp=1570370052, iat=1570366452}'!
+2019-10-06 | 14:54:18.162 | http-nio-8080-exec-10 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-10-06 | 14:54:18.162 | http-nio-8080-exec-10 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-10-06 | 14:54:18.162 | http-nio-8080-exec-10 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-10-06 | 14:54:18.162 | http-nio-8080-exec-10 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-10-06 | 14:54:18.163 | http-nio-8080-exec-10 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-10-06 | 14:54:18.163 | http-nio-8080-exec-10 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-10-06 | 14:54:18.163 | http-nio-8080-exec-10 | DEBUG | c.u.c.PersonController | Successfully found person with username: 'Stevenartz'!
+2019-10-06 | 14:54:18.163 | http-nio-8080-exec-10 |  INFO | c.u.c.PersonController | Person found and set!
+2019-10-06 | 14:54:18.163 | http-nio-8080-exec-10 | DEBUG | c.u.c.PersonController | --- End of Request ---
+2019-10-06 | 14:54:28.576 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-10-06 | 14:54:28.576 | http-nio-8080-exec-2 |  INFO | c.u.c.SongController | User trying to save a Song!
+2019-10-06 | 14:54:28.576 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:28.576 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTcwMzcwMDUyLCJpYXQiOjE1NzAzNjY0NTJ9.PJGXbjnGA4h4ls0AYXHA-LNATtFzKEipbG7e7lPEDfegPkEolka_LOMZlWTK3d2UanK_CEoUP5yaUy9jYSHfSw'!
+2019-10-06 | 14:54:28.576 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-10-06 | 14:54:28.577 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-10-06 | 14:54:28.577 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'rock'!
+2019-10-06 | 14:54:28.577 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'This is'!
+2019-10-06 | 14:54:28.577 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'a test'!
+2019-10-06 | 14:54:28.577 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '600'!
+2019-10-06 | 14:54:28.577 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Validating values: genre: 'rock', title: 'This is', artist: 'a test', length: '600'!
+2019-10-06 | 14:54:28.577 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Validating genre input...!
+2019-10-06 | 14:54:28.578 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Validtion for genre successful!
+2019-10-06 | 14:54:28.578 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Validating title input...!
+2019-10-06 | 14:54:28.578 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Validtion for title successful!
+2019-10-06 | 14:54:28.578 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Validating artist input...!
+2019-10-06 | 14:54:28.578 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Validtion for artist successful!
+2019-10-06 | 14:54:28.578 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Validating length input...!

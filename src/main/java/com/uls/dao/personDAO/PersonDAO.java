@@ -2,10 +2,7 @@ package com.uls.dao.personDAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -55,6 +52,7 @@ public class PersonDAO implements IPersonDAO {
 					if (pstmt != null) {
 						pstmt.setString(1, username);
 						LOGGER.debug("Setting parameter 1 with value: '{}'!", username);
+						LOGGER.debug("Statement: '{}'!", pstmt);
 						List<Person> personList = mapper.mapResultSetToPersonList(pstmt.executeQuery());
 						if (personList != null) {
 							if (personList.size() == 1) {
@@ -80,25 +78,6 @@ public class PersonDAO implements IPersonDAO {
 			LOGGER.error("Failed to execute lookupPersonByUsername({}), Msg: '{}'!", username, sqle.getMessage());
 		}
 		return person;
-	}
-
-	/**
-	 * Selects all persons in the database.
-	 * 
-	 * @return null or a list with persons.
-	 */
-	@Override
-	public List<Person> selectAllPersons() {
-		Connection conn = ConnectionFactory.getConnection();
-		List<Person> personList = null;
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(queryManager.selectAllPersons());
-			personList = mapper.mapResultSetToPersonList(pstmt.executeQuery());
-		} catch (SQLException sqle) {
-			sqle.printStackTrace();
-		}
-
-		return personList;
 	}
 
 }

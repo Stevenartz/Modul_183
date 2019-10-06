@@ -1,7 +1,5 @@
 package com.uls.dao.personDAO;
 
-import java.util.List;
-
 import com.uls.model.Person;
 /**
  * This class serves as an interface for the PersonDAO class to restrict the methods.
@@ -13,6 +11,5 @@ import com.uls.model.Person;
 public interface IPersonDAO {
 
 	Person lookupPersonByUsername(String username);
-	List<Person> selectAllPersons();
 	
 }

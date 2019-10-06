@@ -18,12 +18,12 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {"com.uls.controller"})
 public class M183Application {
 
-	// Stevenartz, password
-	// Samu, pw
-	// Braibrai, passwortpasswort
+	// Stevenartz, kJcUKrGIbzNl
+	// RicRam, CORIyNfDzuHW
+	// JenGal, AsTkdsAkwnDA
 	
 	// keystore-Kennwort: Yf8aKPJAoMRQ
-	// Schlüsselkennwort für <tomcat>: ro3ELPTWgCbZ
+	// Schlüsselkennwort fuer <tomcat>: ro3ELPTWgCbZ
 	
 	/**
 	 * Start of the whole program.

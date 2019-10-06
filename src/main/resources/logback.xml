@@ -20,31 +20,6 @@
 	<property name="LOG_PATTERN"
 		value="%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS} | %thread | %5p | %logger{25} | %m%n" />
 
-	<!-- Prefixes -->
-	<property name="prefix" value="com.uls." />
-
-	<!-- === Loggers === -->
-	<!-- Controller packages -->
-	<property name="PersonController" value="${prefix}controller.PersonController" />
-	<property name="AuthenticationController" value="${prefix}controller.AuthenticationController" />
-
-	<!-- DAO packages -->
-	<property name="ConnectionFactory" value="${prefix}dao.factory.ConnectionFactory" />
-	<property name="QueryManager" value="${prefix}dao.manager.QueryManager" />
-	<property name="Mapper" value="${prefix}dao.mapper.Mapper" />
-	<property name="PersonDAO" value="${prefix}dao.PersonDAO" />
-
-	<!-- Application packages -->
-	<property name="M183Application" value="${prefix}m183.M183Application" />
-
-	<!-- Model packages -->
-	<property name="Person" value="${prefix}model.Person" />
-
-	<!-- Security packages -->
-	<property name="JWTHelper" value="${prefix}security.JWTHelper" />
-	<property name="RequestHandler" value="${prefix}security.RequestHandler" />
-	<property name="SHA512Hasher" value="${prefix}security.SHA512Hasher" />
-
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<pattern>${LOG_PATTERN}</pattern>
@@ -73,50 +48,10 @@
 		</encoder>
 	</appender>
 
-	<!-- ===== Loggers ===== -->
-
-	<!-- Controller packages -->
-<!-- 	<logger name="${PersonController}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-	<logger name="${AuthenticationController}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-	DAO packages
-		<logger name="${ConnectionFactory}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-		<logger name="${QueryManager}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-		<logger name="${Mapper}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-		<logger name="${PersonDAO}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-	Application packages
-	<logger name="${M183Application}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-	Model packages
-	<logger name="${Person}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-	Security packages
-	<logger name="${JWTHelper}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-		<logger name="${RequestHandler}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger>
-		<logger name="${SHA512Hasher}" level="DEBUG">
-		<appender-ref ref="STDOUT" />
-	</logger> -->
 
 	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
-<!-- 		<appender-ref ref="FILE" /> -->
+ 		<appender-ref ref="FILE" />
 	</root>
 
 </configuration>
