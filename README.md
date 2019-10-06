@@ -1,17 +1,8 @@
 # Modul_183
 
-## Gebaut mit
-
-| Technologie  | Beschreibung |
-| ------------ | ------------ |
-| [Spring Boot](https://spring.io/projects/spring-boot/) | Spring Boot Desc. |
-| [Connector/J](https://dev.mysql.com/downloads/connector/j/) | Connector Desc. |
-| [JWT](https://jwt.io/) | JWT Desc. |
-| [SLF4J](https://www.slf4j.org/) | SLF4J Desc. |
-
 JavaDoc creation date comments are written with ISO 8601 standard.
 
-# Mitwirkende
+# Contributor's
 
 <table>
     <tr>
