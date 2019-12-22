@@ -108,5 +108,22 @@ public class QueryManager {
 		LOGGER.debug("Successfully created the insertSongByUsername query: '{}'", query.toString());
 		return query.toString();
 	}
+
+	/**
+	 * Creates the deleteSoingById query. 
+	 * @return the deleteSongById query.
+	 */
+	public String deleteSongById() {
+		StringBuilder query = new StringBuilder()
+			.append("DELETE FROM ")
+			.append(SONGS_TABLE)
+			.append(" WHERE ")
+			.append(SongType.ID)
+			.append(" = ")
+			.append("?;");
+		
+		LOGGER.debug("Successfully created the deleteSongById query: '{}'", query.toString());
+		return query.toString();
+	}
 	
 }

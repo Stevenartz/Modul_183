@@ -6,6 +6,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -120,5 +121,43 @@ public class SongController {
 		}
 		LOGGER.debug("--- End of Request ---");
 		return songList;
+	}
+	
+	/**
+	 * If the user wants to delete a song by id, this method will be called.
+	 * 
+	 * @param headers, the headers from the request.
+	 * @return true, if it was successful, false if not.
+	 */
+	@CrossOrigin(origins = "http://localhost:3000")
+	@DeleteMapping("/deleteSongById")
+	public boolean deleteSongById(@RequestHeader Map<String, String> headers) {
+		LOGGER.debug("--- New Request ---");
+		LOGGER.info("User trying to delete a song!");
+		boolean status = false;
+		Object usernameClaim;
+		Long songId;
+		Claims claims = reqHandler.checkAuthorization(headers);
+		
+		if (claims != null) {
+			usernameClaim = claims.get(JWTHelper.USERNAME);
+			if (usernameClaim != null) {
+				songId = reqHandler.getSongIdFromHeaders(headers);
+				if (songId != null) {
+					if (songDAO.deleteSongById(songId)) {
+						LOGGER.debug("Song with id: '{}'!", songId);
+					} else {
+						LOGGER.debug("Couldn't delete song with id: '{}'!", songId);
+					}
+				}
+				System.out.println(">>> song id: " + songId);
+			} else {
+				LOGGER.debug("No Claim found with id 'username'!");
+			}
+		} else {
+			LOGGER.debug("No Claims found in Token!");
+		}
+		
+		return status;
 	}
 }

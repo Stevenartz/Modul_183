@@ -115,7 +115,7 @@ public class RequestHandler {
 	/**
 	 * Checks if the user input of a song is valid. If so, a song will be returned.
 	 * 
-	 * @param headers, the headers of a JWT.
+	 * @param headers, the headers of the request.
 	 * @return null or a Song.
 	 */
 	public Song getSongFromHeaders(Map<String, String> headers) {
@@ -209,6 +209,28 @@ public class RequestHandler {
 		}
 
 		return song;
+	}
+	
+	/**
+	 * Checks if the headers contain a Song Id and returns the Id back if it's the case.
+	 * 
+	 * @param headers, the headers of the request.
+	 * @return null or a valid Id
+	 */
+	public Long getSongIdFromHeaders(Map<String, String> headers) {
+		Long songId = null;
+		String songIdString = htmlEscaper.escapeHTML(headers.get(SongType.ID.toString().toLowerCase()).trim());
+		if (songIdString != null) {
+			try {
+				songId = Long.parseLong(songIdString);
+			} catch (NumberFormatException nfe) {
+				nfe.printStackTrace();
+				LOGGER.error("Failed to parse id, Msg: '{}'!", nfe.getMessage());
+			}
+		} else {
+			LOGGER.debug("No Song Id found!");
+		}
+		return songId;
 	}
 
 }

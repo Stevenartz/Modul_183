@@ -15,5 +15,6 @@ public interface ISongDAO {
 
 	List<Song> lookupAllSongsByUsername(String username);
 	boolean insertSongByUsername(String username, Song song);
+	boolean deleteSongById(Long songId);
 	
 }

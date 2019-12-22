@@ -117,4 +117,41 @@ public class SongDAO implements ISongDAO {
 		return status;
 	}
 
+	/**
+	 * Deletes a song from the database.
+	 * 
+	 * @param songId, the song to delete.
+	 * @return true, if the deletion was successful, false if not.
+	 */
+	@Override
+	public boolean deleteSongById(Long songId) {
+		Connection conn = ConnectionFactory.getConnection();
+		boolean status = false;
+		
+		try {
+			if (songId != null) {
+				if (conn != null) {
+					PreparedStatement pstmt = conn.prepareStatement(queryManager.deleteSongById());
+					pstmt.setLong(1, songId);
+					LOGGER.debug("Setting parameter 1 with value: '{}'!", songId);
+					LOGGER.debug("Statement: '{}'!", pstmt);
+					if (pstmt.executeUpdate() == 1) {
+						status = true;
+						LOGGER.debug("Successfully deleted song with id: '{}'!", songId);
+					} else {
+						LOGGER.debug("User tried to delete a song, but no rows have been affected");
+					}
+				} else {
+					LOGGER.warn("Connection not active, connection is null!");
+				}
+			} else {
+				LOGGER.debug("username cannot be null!");
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+			LOGGER.error("Failed to execute deleteSongById({}), Msg: '{}'!", songId, sqle.getMessage());
+		}
+		return status;
+	}
+
 }
