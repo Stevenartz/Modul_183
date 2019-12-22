@@ -157,7 +157,7 @@ public class SongController {
 		} else {
 			LOGGER.debug("No Claims found in Token!");
 		}
-		
+		LOGGER.debug("--- End of Request ---");	
 		return status;
 	}
 }
