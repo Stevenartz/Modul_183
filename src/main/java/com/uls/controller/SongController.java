@@ -145,6 +145,7 @@ public class SongController {
 				songId = reqHandler.getSongIdFromHeaders(headers);
 				if (songId != null) {
 					if (songDAO.deleteSongById(songId)) {
+						status = true;
 						LOGGER.debug("Song with id: '{}'!", songId);
 					} else {
 						LOGGER.debug("Couldn't delete song with id: '{}'!", songId);

@@ -1,192 +1,353 @@
-2019-12-22 | 00:00:07.569 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
-2019-12-22 | 00:00:07.577 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
-2019-12-22 | 00:00:07.578 | main | DEBUG | c.u.c.SongController | SongController initialized!
-2019-12-22 | 00:00:07.889 | main |  INFO | c.u.m183.M183Application | Application started and running!
-2019-12-22 | 00:00:11.042 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 00:00:11.042 | http-nio-8080-exec-2 |  INFO | c.u.c.SongController | User trying to delete a song!
-2019-12-22 | 00:00:11.043 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 00:00:11.043 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 00:00:11.044 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 00:00:11.213 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 00:01:14.491 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
-2019-12-22 | 00:01:14.495 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
-2019-12-22 | 00:01:14.497 | main | DEBUG | c.u.c.SongController | SongController initialized!
-2019-12-22 | 00:01:14.841 | main |  INFO | c.u.m183.M183Application | Application started and running!
-2019-12-22 | 00:01:17.468 | http-nio-8080-exec-1 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 00:01:17.468 | http-nio-8080-exec-1 |  INFO | c.u.c.SongController | User trying to delete a song!
-2019-12-22 | 00:01:17.468 | http-nio-8080-exec-1 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 00:01:17.469 | http-nio-8080-exec-1 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 00:01:17.469 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 00:01:17.665 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 00:02:39.000 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
-2019-12-22 | 00:02:39.005 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
-2019-12-22 | 00:02:39.006 | main | DEBUG | c.u.c.SongController | SongController initialized!
-2019-12-22 | 00:02:39.322 | main |  INFO | c.u.m183.M183Application | Application started and running!
-2019-12-22 | 00:02:50.153 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 00:02:50.153 | http-nio-8080-exec-2 |  INFO | c.u.c.SongController | User trying to delete a song!
-2019-12-22 | 00:02:50.153 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 00:02:50.154 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 00:02:50.154 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 00:02:50.331 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 00:02:50.332 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '1'!
-2019-12-22 | 00:11:35.355 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
-2019-12-22 | 00:11:35.360 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
-2019-12-22 | 00:11:35.361 | main | DEBUG | c.u.c.SongController | SongController initialized!
-2019-12-22 | 00:11:35.705 | main |  INFO | c.u.m183.M183Application | Application started and running!
-2019-12-22 | 00:11:38.212 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 00:11:38.212 | http-nio-8080-exec-2 |  INFO | c.u.c.SongController | User trying to delete a song!
-2019-12-22 | 00:11:38.212 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 00:11:38.213 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 00:11:38.213 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 00:11:38.386 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 00:11:38.386 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '1'!
-2019-12-22 | 00:11:38.387 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Creating new database connection!
-2019-12-22 | 00:11:38.490 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Successfully created connection: 'com.mysql.cj.jdbc.ConnectionImpl@1fa3f093', with URL: 'jdbc:mysql://localhost:3306/modul_183?serverTimezone=UTC', Username: 'stefan' and Password: '************'!
-2019-12-22 | 00:11:38.490 | http-nio-8080-exec-2 |  INFO | c.u.d.f.ConnectionFactory | Successfully created a new connection to database!
-2019-12-22 | 00:11:38.490 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the deleteSongById query: 'DELETE FROM songs WHERE songId =  ?;'
-2019-12-22 | 00:11:38.501 | http-nio-8080-exec-2 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: '1'!
-2019-12-22 | 00:11:38.502 | http-nio-8080-exec-2 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM songs WHERE songId =  1;'!
-2019-12-22 | 09:00:32.498 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
-2019-12-22 | 09:00:32.504 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
-2019-12-22 | 09:00:32.505 | main | DEBUG | c.u.c.SongController | SongController initialized!
-2019-12-22 | 09:00:32.884 | main |  INFO | c.u.m183.M183Application | Application started and running!
-2019-12-22 | 09:00:43.850 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | --- New Request ---
-2019-12-22 | 09:00:43.851 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | User trying to login!
-2019-12-22 | 09:00:43.851 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Basic U3RldmVuYXJ0ejprSmNVS3JHSWJ6Tmw='!
-2019-12-22 | 09:00:43.852 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Basic authorization found: 'Basic U3RldmVuYXJ0ejprSmNVS3JHSWJ6Tmw='!
-2019-12-22 | 09:00:43.852 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Decoding basic authorization!
-2019-12-22 | 09:00:43.855 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Creating new database connection!
-2019-12-22 | 09:00:43.981 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Successfully created connection: 'com.mysql.cj.jdbc.ConnectionImpl@61293070', with URL: 'jdbc:mysql://localhost:3306/modul_183?serverTimezone=UTC', Username: 'stefan' and Password: '************'!
-2019-12-22 | 09:00:43.981 | http-nio-8080-exec-2 |  INFO | c.u.d.f.ConnectionFactory | Successfully created a new connection to database!
-2019-12-22 | 09:00:43.982 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
-2019-12-22 | 09:00:43.982 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
-2019-12-22 | 09:00:43.995 | http-nio-8080-exec-2 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
-2019-12-22 | 09:00:43.996 | http-nio-8080-exec-2 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
-2019-12-22 | 09:00:44.003 | http-nio-8080-exec-2 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
-2019-12-22 | 09:00:44.004 | http-nio-8080-exec-2 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
-2019-12-22 | 09:00:44.004 | http-nio-8080-exec-2 | DEBUG | c.u.security.SHA512Hasher | Hashing text: 'kJcUKrGIbzNl' to SHA-512!
-2019-12-22 | 09:00:44.005 | http-nio-8080-exec-2 | DEBUG | c.u.security.SHA512Hasher | Successfully hashed!
-2019-12-22 | 09:00:44.005 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | User: 'Stevenartz' successfully authenticated!
-2019-12-22 | 09:00:44.005 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | Variable 'username' set to : 'Stevenartz'!
-2019-12-22 | 09:00:44.005 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Creating a JWT!
-2019-12-22 | 09:00:44.197 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | Token created: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:00:44.198 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | User successfully logged in!
-2019-12-22 | 09:00:44.198 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | --- End of Request ---
-2019-12-22 | 09:00:55.626 | http-nio-8080-exec-3 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 09:00:55.626 | http-nio-8080-exec-3 |  INFO | c.u.c.SongController | User trying to save a Song!
-2019-12-22 | 09:00:55.627 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:00:55.627 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:00:55.627 | http-nio-8080-exec-3 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 09:00:55.662 | http-nio-8080-exec-3 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 09:00:55.662 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'genregenregenregenregenregenree'!
-2019-12-22 | 09:00:55.662 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Undo'!
-2019-12-22 | 09:00:55.663 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Naughty Boy'!
-2019-12-22 | 09:00:55.663 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '301f'!
-2019-12-22 | 09:00:55.663 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating values: genre: 'genregenregenregenregenregenree', title: 'Undo', artist: 'Naughty Boy', length: '301f'!
-2019-12-22 | 09:00:55.663 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating genre input...!
-2019-12-22 | 09:00:55.663 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Genre input didn't match with length. Expected between: '0' and '30', but was: '31'!
-2019-12-22 | 09:00:55.663 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating title input...!
-2019-12-22 | 09:00:55.663 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validtion for title successful!
-2019-12-22 | 09:00:55.663 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating artist input...!
-2019-12-22 | 09:00:55.663 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validtion for artist successful!
-2019-12-22 | 09:00:55.664 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating length input...!
-2019-12-22 | 09:00:55.664 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Song length didn't match with RegEx pattern: '[0-9]+'!
-2019-12-22 | 09:00:55.664 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validation failed! Amount of passsed validations: '2'!
-2019-12-22 | 09:00:55.664 | http-nio-8080-exec-3 | DEBUG | c.u.c.SongController | Validation for a new song failed!
-2019-12-22 | 09:00:55.664 | http-nio-8080-exec-3 | DEBUG | c.u.c.SongController | --- End of Request ---
-2019-12-22 | 09:01:08.177 | http-nio-8080-exec-4 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 09:01:08.177 | http-nio-8080-exec-4 |  INFO | c.u.c.SongController | User trying to save a Song!
-2019-12-22 | 09:01:08.177 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:01:08.177 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:01:08.177 | http-nio-8080-exec-4 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'genregenreg'!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Undo'!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Naughty Boy'!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '301f'!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating values: genre: 'genregenreg', title: 'Undo', artist: 'Naughty Boy', length: '301f'!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating genre input...!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for genre successful!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating title input...!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for title successful!
-2019-12-22 | 09:01:08.180 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating artist input...!
-2019-12-22 | 09:01:08.181 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for artist successful!
-2019-12-22 | 09:01:08.181 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating length input...!
-2019-12-22 | 09:01:08.181 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Song length didn't match with RegEx pattern: '[0-9]+'!
-2019-12-22 | 09:01:08.181 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validation failed! Amount of passsed validations: '3'!
-2019-12-22 | 09:01:08.181 | http-nio-8080-exec-4 | DEBUG | c.u.c.SongController | Validation for a new song failed!
-2019-12-22 | 09:01:08.181 | http-nio-8080-exec-4 | DEBUG | c.u.c.SongController | --- End of Request ---
-2019-12-22 | 09:01:25.643 | http-nio-8080-exec-5 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 09:01:25.643 | http-nio-8080-exec-5 |  INFO | c.u.c.SongController | User trying to save a Song!
-2019-12-22 | 09:01:25.643 | http-nio-8080-exec-5 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:01:25.643 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:01:25.643 | http-nio-8080-exec-5 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 09:01:25.644 | http-nio-8080-exec-5 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'genregenreg'!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Undo'!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Naughty Boy'!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '301'!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Validating values: genre: 'genregenreg', title: 'Undo', artist: 'Naughty Boy', length: '301'!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Validating genre input...!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Validtion for genre successful!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Validating title input...!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Validtion for title successful!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Validating artist input...!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Validtion for artist successful!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Validating length input...!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Validtion for song length successful!
-2019-12-22 | 09:01:25.645 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Creating a new Song!
-2019-12-22 | 09:01:25.646 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Successfully created a new song!
-2019-12-22 | 09:01:25.646 | http-nio-8080-exec-5 |  INFO | c.u.c.SongController | Values for a new Song successfully validated!
-2019-12-22 | 09:01:25.646 | http-nio-8080-exec-5 | DEBUG | c.u.d.m.QueryManager | Successfully created the insertSongByUsername query: 'INSERT INTO songs (persons_username, genre, title, artist, length) VALUES (?, ?, ?, ?, ?);'
-2019-12-22 | 09:01:25.647 | http-nio-8080-exec-5 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: 'Stevenartz'!
-2019-12-22 | 09:01:25.647 | http-nio-8080-exec-5 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 2 with value: 'genregenreg'!
-2019-12-22 | 09:01:25.647 | http-nio-8080-exec-5 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 3 with value: 'Undo'!
-2019-12-22 | 09:01:25.647 | http-nio-8080-exec-5 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 4 with value: 'Naughty Boy'!
-2019-12-22 | 09:01:25.647 | http-nio-8080-exec-5 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 5 with value: '301'!
-2019-12-22 | 09:01:25.647 | http-nio-8080-exec-5 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO songs (persons_username, genre, title, artist, length) VALUES ('Stevenartz', 'genregenreg', 'Undo', 'Naughty Boy', 301);'!
-2019-12-22 | 09:01:25.652 | http-nio-8080-exec-5 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully inserted new song: 'Song [id=0, genre=genregenreg, title=Undo, artist=Naughty Boy, length=301]', for person with username: 'Stevenartz'!
-2019-12-22 | 09:01:25.653 | http-nio-8080-exec-5 | DEBUG | c.u.c.SongController | --- End of Request ---
-2019-12-22 | 09:01:44.549 | http-nio-8080-exec-6 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 09:01:44.549 | http-nio-8080-exec-6 |  INFO | c.u.c.SongController | User trying to delete a song!
-2019-12-22 | 09:01:44.549 | http-nio-8080-exec-6 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 09:01:44.549 | http-nio-8080-exec-6 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
-2019-12-22 | 09:01:44.549 | http-nio-8080-exec-6 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 09:02:01.129 | http-nio-8080-exec-8 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 09:02:01.130 | http-nio-8080-exec-8 |  INFO | c.u.c.SongController | User trying to delete a song!
-2019-12-22 | 09:02:01.130 | http-nio-8080-exec-8 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:02:01.130 | http-nio-8080-exec-8 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:02:01.130 | http-nio-8080-exec-8 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 09:02:01.131 | http-nio-8080-exec-8 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 09:02:01.131 | http-nio-8080-exec-8 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '64'!
-2019-12-22 | 09:02:01.131 | http-nio-8080-exec-8 | DEBUG | c.u.d.m.QueryManager | Successfully created the deleteSongById query: 'DELETE FROM songs WHERE songId = ?;'
-2019-12-22 | 09:02:01.131 | http-nio-8080-exec-8 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: '64'!
-2019-12-22 | 09:02:01.131 | http-nio-8080-exec-8 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM songs WHERE songId = 64;'!
-2019-12-22 | 09:04:05.159 | http-nio-8080-exec-1 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 09:04:05.159 | http-nio-8080-exec-1 |  INFO | c.u.c.SongController | User trying to delete a song!
-2019-12-22 | 09:04:05.160 | http-nio-8080-exec-1 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:04:05.160 | http-nio-8080-exec-1 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:04:05.160 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 09:04:05.161 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 09:04:05.161 | http-nio-8080-exec-1 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '64'!
-2019-12-22 | 09:04:05.161 | http-nio-8080-exec-1 | DEBUG | c.u.d.m.QueryManager | Successfully created the deleteSongById query: 'DELETE FROM songs WHERE songId = ?;'
-2019-12-22 | 09:04:05.162 | http-nio-8080-exec-1 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: '64'!
-2019-12-22 | 09:04:05.162 | http-nio-8080-exec-1 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM songs WHERE songId = 64;'!
-2019-12-22 | 09:04:19.373 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
-2019-12-22 | 09:04:19.379 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
-2019-12-22 | 09:04:19.380 | main | DEBUG | c.u.c.SongController | SongController initialized!
-2019-12-22 | 09:04:19.717 | main |  INFO | c.u.m183.M183Application | Application started and running!
-2019-12-22 | 09:04:22.391 | http-nio-8080-exec-1 | DEBUG | c.u.c.SongController | --- New Request ---
-2019-12-22 | 09:04:22.392 | http-nio-8080-exec-1 |  INFO | c.u.c.SongController | User trying to delete a song!
-2019-12-22 | 09:04:22.392 | http-nio-8080-exec-1 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:04:22.393 | http-nio-8080-exec-1 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3MDA1MjQ0LCJpYXQiOjE1NzcwMDE2NDR9.g95D9uilIPbD1uIfuLyQkoSEFsYsQG_7_o3Udn92TDhfYB62pA4hlkwA7HxqOXrzxDIUmNFgJYUysvkKz9siwg'!
-2019-12-22 | 09:04:22.393 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
-2019-12-22 | 09:04:22.576 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verification successful!
-2019-12-22 | 09:04:22.577 | http-nio-8080-exec-1 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '64'!
-2019-12-22 | 09:04:22.578 | http-nio-8080-exec-1 | DEBUG | c.u.d.f.ConnectionFactory | Creating new database connection!
-2019-12-22 | 09:04:22.697 | http-nio-8080-exec-1 | DEBUG | c.u.d.f.ConnectionFactory | Successfully created connection: 'com.mysql.cj.jdbc.ConnectionImpl@4b63d942', with URL: 'jdbc:mysql://localhost:3306/modul_183?serverTimezone=UTC', Username: 'stefan' and Password: '************'!
-2019-12-22 | 09:04:22.698 | http-nio-8080-exec-1 |  INFO | c.u.d.f.ConnectionFactory | Successfully created a new connection to database!
-2019-12-22 | 09:04:22.698 | http-nio-8080-exec-1 | DEBUG | c.u.d.m.QueryManager | Successfully created the deleteSongById query: 'DELETE FROM songs WHERE songId = ?;'
-2019-12-22 | 09:04:22.708 | http-nio-8080-exec-1 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: '64'!
-2019-12-22 | 09:04:22.708 | http-nio-8080-exec-1 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM songs WHERE songId = 64;'!
-2019-12-22 | 09:04:22.712 | http-nio-8080-exec-1 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully deleted song with id: '64'!
+2019-12-29 | 10:10:49.673 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
+2019-12-29 | 10:10:49.682 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
+2019-12-29 | 10:10:49.684 | main | DEBUG | c.u.c.SongController | SongController initialized!
+2019-12-29 | 10:10:50.107 | main |  INFO | c.u.m183.M183Application | Application started and running!
+2019-12-29 | 10:20:56.728 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | --- New Request ---
+2019-12-29 | 10:20:56.728 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | User trying to login!
+2019-12-29 | 10:20:56.728 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Basic U3RldmVuYXJ0ejprSmNVS3JHSWJ6Tmw='!
+2019-12-29 | 10:20:56.729 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Basic authorization found: 'Basic U3RldmVuYXJ0ejprSmNVS3JHSWJ6Tmw='!
+2019-12-29 | 10:20:56.729 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Decoding basic authorization!
+2019-12-29 | 10:20:56.732 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Creating new database connection!
+2019-12-29 | 10:20:56.871 | http-nio-8080-exec-2 | DEBUG | c.u.d.f.ConnectionFactory | Successfully created connection: 'com.mysql.cj.jdbc.ConnectionImpl@2583952d', with URL: 'jdbc:mysql://localhost:3306/modul_183?serverTimezone=UTC', Username: 'stefan' and Password: '************'!
+2019-12-29 | 10:20:56.871 | http-nio-8080-exec-2 |  INFO | c.u.d.f.ConnectionFactory | Successfully created a new connection to database!
+2019-12-29 | 10:20:56.871 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-12-29 | 10:20:56.871 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-12-29 | 10:20:56.882 | http-nio-8080-exec-2 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 10:20:56.882 | http-nio-8080-exec-2 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-12-29 | 10:20:56.896 | http-nio-8080-exec-2 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-12-29 | 10:20:56.897 | http-nio-8080-exec-2 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-12-29 | 10:20:56.897 | http-nio-8080-exec-2 | DEBUG | c.u.security.SHA512Hasher | Hashing text: 'kJcUKrGIbzNl' to SHA-512!
+2019-12-29 | 10:20:56.898 | http-nio-8080-exec-2 | DEBUG | c.u.security.SHA512Hasher | Successfully hashed!
+2019-12-29 | 10:20:56.898 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | User: 'Stevenartz' successfully authenticated!
+2019-12-29 | 10:20:56.898 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | Variable 'username' set to : 'Stevenartz'!
+2019-12-29 | 10:20:56.898 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Creating a JWT!
+2019-12-29 | 10:20:57.103 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | Token created: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE0ODU2LCJpYXQiOjE1Nzc2MTEyNTZ9.IhJeGUKvYhHN8FSr0_K4jVHb-c_u1W7jrx8YU2kyN0v1sWx9ORp4nSI0ZuM8bflyu5D3dj9L151_4Ttevvir2Q'!
+2019-12-29 | 10:20:57.104 | http-nio-8080-exec-2 |  INFO | c.u.c.AuthenticationController | User successfully logged in!
+2019-12-29 | 10:20:57.104 | http-nio-8080-exec-2 | DEBUG | c.u.c.AuthenticationController | --- End of Request ---
+2019-12-29 | 10:30:55.645 | http-nio-8080-exec-5 | DEBUG | c.u.c.PersonController | --- New Request ---
+2019-12-29 | 10:30:55.646 | http-nio-8080-exec-5 |  INFO | c.u.c.PersonController | User trying to get a Person by his username!
+2019-12-29 | 10:30:55.646 | http-nio-8080-exec-5 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
+2019-12-29 | 10:30:55.646 | http-nio-8080-exec-5 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc2OTcyNTk1LCJpYXQiOjE1NzY5Njg5OTV9.ATAQo2IDIemYa5YAAs4SltDMah9vJwE0gwkmqkemrT9X6YKx8S2reCUjagSr_qJ3bFFPQJBAmTR0UgOrxHZd5g'!
+2019-12-29 | 10:30:55.646 | http-nio-8080-exec-5 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 10:31:03.554 | http-nio-8080-exec-7 | DEBUG | c.u.c.AuthenticationController | --- New Request ---
+2019-12-29 | 10:31:03.554 | http-nio-8080-exec-7 |  INFO | c.u.c.AuthenticationController | User trying to login!
+2019-12-29 | 10:31:03.554 | http-nio-8080-exec-7 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Basic U3RldmVuYXJ0ejprSmNVS3JHSWJ6Tmw='!
+2019-12-29 | 10:31:03.554 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Basic authorization found: 'Basic U3RldmVuYXJ0ejprSmNVS3JHSWJ6Tmw='!
+2019-12-29 | 10:31:03.554 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Decoding basic authorization!
+2019-12-29 | 10:31:03.554 | http-nio-8080-exec-7 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-12-29 | 10:31:03.554 | http-nio-8080-exec-7 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-12-29 | 10:31:03.555 | http-nio-8080-exec-7 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 10:31:03.555 | http-nio-8080-exec-7 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-12-29 | 10:31:03.556 | http-nio-8080-exec-7 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-12-29 | 10:31:03.556 | http-nio-8080-exec-7 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-12-29 | 10:31:03.556 | http-nio-8080-exec-7 | DEBUG | c.u.security.SHA512Hasher | Hashing text: 'kJcUKrGIbzNl' to SHA-512!
+2019-12-29 | 10:31:03.557 | http-nio-8080-exec-7 | DEBUG | c.u.security.SHA512Hasher | Successfully hashed!
+2019-12-29 | 10:31:03.557 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | User: 'Stevenartz' successfully authenticated!
+2019-12-29 | 10:31:03.557 | http-nio-8080-exec-7 | DEBUG | c.u.c.AuthenticationController | Variable 'username' set to : 'Stevenartz'!
+2019-12-29 | 10:31:03.557 | http-nio-8080-exec-7 | DEBUG | c.uls.security.JWTHelper | Creating a JWT!
+2019-12-29 | 10:31:03.557 | http-nio-8080-exec-7 | DEBUG | c.u.c.AuthenticationController | Token created: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:31:03.557 | http-nio-8080-exec-7 |  INFO | c.u.c.AuthenticationController | User successfully logged in!
+2019-12-29 | 10:31:03.558 | http-nio-8080-exec-7 | DEBUG | c.u.c.AuthenticationController | --- End of Request ---
+2019-12-29 | 10:31:12.877 | http-nio-8080-exec-8 | DEBUG | c.u.c.PersonController | --- New Request ---
+2019-12-29 | 10:31:12.877 | http-nio-8080-exec-8 |  INFO | c.u.c.PersonController | User trying to get a Person by his username!
+2019-12-29 | 10:31:12.877 | http-nio-8080-exec-8 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:31:12.877 | http-nio-8080-exec-8 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:31:12.878 | http-nio-8080-exec-8 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 10:31:12.881 | http-nio-8080-exec-8 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 10:31:12.882 | http-nio-8080-exec-8 | DEBUG | c.u.c.PersonController | Claims set to: '{sub=Stevenartz, exp=1577615463, iat=1577611863}'!
+2019-12-29 | 10:31:12.882 | http-nio-8080-exec-8 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-12-29 | 10:31:12.882 | http-nio-8080-exec-8 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-12-29 | 10:31:12.882 | http-nio-8080-exec-8 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 10:31:12.882 | http-nio-8080-exec-8 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-12-29 | 10:31:12.883 | http-nio-8080-exec-8 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-12-29 | 10:31:12.883 | http-nio-8080-exec-8 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-12-29 | 10:31:12.883 | http-nio-8080-exec-8 | DEBUG | c.u.c.PersonController | Successfully found person with username: 'Stevenartz'!
+2019-12-29 | 10:31:12.884 | http-nio-8080-exec-8 |  INFO | c.u.c.PersonController | Person found and set!
+2019-12-29 | 10:31:12.884 | http-nio-8080-exec-8 | DEBUG | c.u.c.PersonController | --- End of Request ---
+2019-12-29 | 10:34:52.796 | http-nio-8080-exec-1 | DEBUG | c.u.c.PersonController | --- New Request ---
+2019-12-29 | 10:34:52.796 | http-nio-8080-exec-1 |  INFO | c.u.c.PersonController | User trying to get a Person by his username!
+2019-12-29 | 10:34:52.796 | http-nio-8080-exec-1 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:34:52.797 | http-nio-8080-exec-1 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:34:52.797 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 10:34:52.798 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 10:34:52.798 | http-nio-8080-exec-1 | DEBUG | c.u.c.PersonController | Claims set to: '{sub=Stevenartz, exp=1577615463, iat=1577611863}'!
+2019-12-29 | 10:34:52.799 | http-nio-8080-exec-1 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-12-29 | 10:34:52.799 | http-nio-8080-exec-1 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-12-29 | 10:34:52.799 | http-nio-8080-exec-1 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 10:34:52.799 | http-nio-8080-exec-1 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-12-29 | 10:34:52.800 | http-nio-8080-exec-1 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-12-29 | 10:34:52.800 | http-nio-8080-exec-1 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-12-29 | 10:34:52.800 | http-nio-8080-exec-1 | DEBUG | c.u.c.PersonController | Successfully found person with username: 'Stevenartz'!
+2019-12-29 | 10:34:52.800 | http-nio-8080-exec-1 |  INFO | c.u.c.PersonController | Person found and set!
+2019-12-29 | 10:34:52.800 | http-nio-8080-exec-1 | DEBUG | c.u.c.PersonController | --- End of Request ---
+2019-12-29 | 10:35:53.455 | http-nio-8080-exec-4 | DEBUG | c.u.c.PersonController | --- New Request ---
+2019-12-29 | 10:35:53.455 | http-nio-8080-exec-4 |  INFO | c.u.c.PersonController | User trying to get a Person by his username!
+2019-12-29 | 10:35:53.455 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:35:53.455 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:35:53.455 | http-nio-8080-exec-4 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 10:35:53.457 | http-nio-8080-exec-4 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 10:35:53.457 | http-nio-8080-exec-4 | DEBUG | c.u.c.PersonController | Claims set to: '{sub=Stevenartz, exp=1577615463, iat=1577611863}'!
+2019-12-29 | 10:35:53.458 | http-nio-8080-exec-4 | DEBUG | c.u.d.m.QueryManager | Successfully created the selectAllPersons query: 'SELECT username, firstname, lastname, password, birthday FROM persons;'
+2019-12-29 | 10:35:53.458 | http-nio-8080-exec-4 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupPersonByUsername query: 'SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = ?;'
+2019-12-29 | 10:35:53.458 | http-nio-8080-exec-4 | DEBUG | c.u.d.personDAO.PersonDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 10:35:53.458 | http-nio-8080-exec-4 | DEBUG | c.u.d.personDAO.PersonDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT username, firstname, lastname, password, birthday FROM persons WHERE username = 'Stevenartz';'!
+2019-12-29 | 10:35:53.459 | http-nio-8080-exec-4 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to person list!
+2019-12-29 | 10:35:53.459 | http-nio-8080-exec-4 |  INFO | c.u.d.personDAO.PersonDAO | Successfully found person with username: 'Stevenartz'!
+2019-12-29 | 10:35:53.459 | http-nio-8080-exec-4 | DEBUG | c.u.c.PersonController | Successfully found person with username: 'Stevenartz'!
+2019-12-29 | 10:35:53.459 | http-nio-8080-exec-4 |  INFO | c.u.c.PersonController | Person found and set!
+2019-12-29 | 10:35:53.459 | http-nio-8080-exec-4 | DEBUG | c.u.c.PersonController | --- End of Request ---
+2019-12-29 | 10:45:48.496 | http-nio-8080-exec-7 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 10:45:48.497 | http-nio-8080-exec-7 |  INFO | c.u.c.SongController | User trying to save a Song!
+2019-12-29 | 10:45:48.497 | http-nio-8080-exec-7 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:45:48.497 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:45:48.497 | http-nio-8080-exec-7 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 10:45:48.498 | http-nio-8080-exec-7 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 10:45:48.499 | http-nio-8080-exec-7 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'pop'!
+2019-12-29 | 10:45:48.500 | http-nio-8080-exec-7 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'So Long'!
+2019-12-29 | 10:45:48.500 | http-nio-8080-exec-7 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'ESCPR'!
+2019-12-29 | 10:45:48.500 | http-nio-8080-exec-7 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '175'!
+2019-12-29 | 10:45:48.500 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Validating values: genre: 'pop', title: 'So Long', artist: 'ESCPR', length: '175'!
+2019-12-29 | 10:45:48.500 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Validating genre input...!
+2019-12-29 | 10:45:48.501 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Validtion for genre successful!
+2019-12-29 | 10:45:48.501 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Validating title input...!
+2019-12-29 | 10:45:48.502 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Validtion for title successful!
+2019-12-29 | 10:45:48.502 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Validating artist input...!
+2019-12-29 | 10:45:48.502 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Validtion for artist successful!
+2019-12-29 | 10:45:48.502 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Validating length input...!
+2019-12-29 | 10:45:48.502 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Validtion for song length successful!
+2019-12-29 | 10:45:48.502 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Creating a new Song!
+2019-12-29 | 10:45:48.504 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Successfully created a new song!
+2019-12-29 | 10:45:48.504 | http-nio-8080-exec-7 |  INFO | c.u.c.SongController | Values for a new Song successfully validated!
+2019-12-29 | 10:45:48.504 | http-nio-8080-exec-7 | DEBUG | c.u.d.m.QueryManager | Successfully created the insertSongByUsername query: 'INSERT INTO songs (persons_username, genre, title, artist, length) VALUES (?, ?, ?, ?, ?);'
+2019-12-29 | 10:45:48.504 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 10:45:48.504 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 2 with value: 'pop'!
+2019-12-29 | 10:45:48.505 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 3 with value: 'So Long'!
+2019-12-29 | 10:45:48.505 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 4 with value: 'ESCPR'!
+2019-12-29 | 10:45:48.505 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 5 with value: '175'!
+2019-12-29 | 10:45:48.505 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO songs (persons_username, genre, title, artist, length) VALUES ('Stevenartz', 'pop', 'So Long', 'ESCPR', 175);'!
+2019-12-29 | 10:45:48.518 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully inserted new song: 'Song [id=0, genre=pop, title=So Long, artist=ESCPR, length=175]', for person with username: 'Stevenartz'!
+2019-12-29 | 10:45:48.519 | http-nio-8080-exec-7 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 10:48:47.665 | http-nio-8080-exec-10 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 10:48:47.665 | http-nio-8080-exec-10 |  INFO | c.u.c.SongController | User trying to save a Song!
+2019-12-29 | 10:48:47.665 | http-nio-8080-exec-10 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:48:47.665 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:48:47.665 | http-nio-8080-exec-10 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'pop'!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'So Long'!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'ESCPR'!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '175'!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Validating values: genre: 'pop', title: 'So Long', artist: 'ESCPR', length: '175'!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Validating genre input...!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Validtion for genre successful!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Validating title input...!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Validtion for title successful!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Validating artist input...!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Validtion for artist successful!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Validating length input...!
+2019-12-29 | 10:48:47.667 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Validtion for song length successful!
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Creating a new Song!
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 | DEBUG | c.u.s.RequestHandler | Successfully created a new song!
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 |  INFO | c.u.c.SongController | Values for a new Song successfully validated!
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 | DEBUG | c.u.d.m.QueryManager | Successfully created the insertSongByUsername query: 'INSERT INTO songs (persons_username, genre, title, artist, length) VALUES (?, ?, ?, ?, ?);'
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 2 with value: 'pop'!
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 3 with value: 'So Long'!
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 4 with value: 'ESCPR'!
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 5 with value: '175'!
+2019-12-29 | 10:48:47.668 | http-nio-8080-exec-10 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO songs (persons_username, genre, title, artist, length) VALUES ('Stevenartz', 'pop', 'So Long', 'ESCPR', 175);'!
+2019-12-29 | 10:48:47.671 | http-nio-8080-exec-10 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully inserted new song: 'Song [id=0, genre=pop, title=So Long, artist=ESCPR, length=175]', for person with username: 'Stevenartz'!
+2019-12-29 | 10:48:47.671 | http-nio-8080-exec-10 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 10:59:34.161 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 10:59:34.161 | http-nio-8080-exec-2 |  INFO | c.u.c.SongController | User trying to get a List with all his songs!
+2019-12-29 | 10:59:34.161 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:59:34.161 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 10:59:34.161 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 10:59:34.163 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 10:59:34.163 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupAllSongsById query: 'SELECT songId, genre, title, artist, length FROM songs WHERE persons_username = ?;'
+2019-12-29 | 10:59:34.163 | http-nio-8080-exec-2 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 10:59:34.163 | http-nio-8080-exec-2 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT songId, genre, title, artist, length FROM songs WHERE persons_username = 'Stevenartz';'!
+2019-12-29 | 10:59:34.166 | http-nio-8080-exec-2 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to song list!
+2019-12-29 | 10:59:34.166 | http-nio-8080-exec-2 |  INFO | c.uls.dao.songDAO.SongDAO | Successfully found songs for person with username: 'Stevenartz'!
+2019-12-29 | 10:59:34.167 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | Successfully found songs with username: 'Stevenartz'!
+2019-12-29 | 10:59:34.167 | http-nio-8080-exec-2 |  INFO | c.u.c.SongController | Songs found and set!
+2019-12-29 | 10:59:34.167 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 11:00:54.534 | http-nio-8080-exec-6 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 11:00:54.535 | http-nio-8080-exec-6 |  INFO | c.u.c.SongController | User trying to get a List with all his songs!
+2019-12-29 | 11:00:54.535 | http-nio-8080-exec-6 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:00:54.535 | http-nio-8080-exec-6 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:00:54.535 | http-nio-8080-exec-6 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 11:00:54.536 | http-nio-8080-exec-6 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 11:00:54.536 | http-nio-8080-exec-6 | DEBUG | c.u.d.m.QueryManager | Successfully created the lookupAllSongsById query: 'SELECT songId, genre, title, artist, length FROM songs WHERE persons_username = ?;'
+2019-12-29 | 11:00:54.536 | http-nio-8080-exec-6 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 11:00:54.536 | http-nio-8080-exec-6 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: SELECT songId, genre, title, artist, length FROM songs WHERE persons_username = 'Stevenartz';'!
+2019-12-29 | 11:00:54.537 | http-nio-8080-exec-6 | DEBUG | com.uls.dao.mapper.Mapper | Mapping ResultSet to song list!
+2019-12-29 | 11:00:54.537 | http-nio-8080-exec-6 |  INFO | c.uls.dao.songDAO.SongDAO | Successfully found songs for person with username: 'Stevenartz'!
+2019-12-29 | 11:00:54.538 | http-nio-8080-exec-6 | DEBUG | c.u.c.SongController | Successfully found songs with username: 'Stevenartz'!
+2019-12-29 | 11:00:54.538 | http-nio-8080-exec-6 |  INFO | c.u.c.SongController | Songs found and set!
+2019-12-29 | 11:00:54.538 | http-nio-8080-exec-6 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 11:09:59.113 | http-nio-8080-exec-9 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 11:09:59.113 | http-nio-8080-exec-9 |  INFO | c.u.c.SongController | User trying to delete a song!
+2019-12-29 | 11:09:59.113 | http-nio-8080-exec-9 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:09:59.114 | http-nio-8080-exec-9 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:09:59.114 | http-nio-8080-exec-9 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 11:09:59.115 | http-nio-8080-exec-9 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 11:09:59.116 | http-nio-8080-exec-9 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '62'!
+2019-12-29 | 11:09:59.116 | http-nio-8080-exec-9 | DEBUG | c.u.d.m.QueryManager | Successfully created the deleteSongById query: 'DELETE FROM songs WHERE songId = ?;'
+2019-12-29 | 11:09:59.116 | http-nio-8080-exec-9 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: '62'!
+2019-12-29 | 11:09:59.116 | http-nio-8080-exec-9 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM songs WHERE songId = 62;'!
+2019-12-29 | 11:09:59.123 | http-nio-8080-exec-9 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully deleted song with id: '62'!
+2019-12-29 | 11:09:59.124 | http-nio-8080-exec-9 | DEBUG | c.u.c.SongController | Song with id: '62'!
+2019-12-29 | 11:09:59.124 | http-nio-8080-exec-9 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 11:12:00.356 | http-nio-8080-exec-3 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 11:12:00.356 | http-nio-8080-exec-3 |  INFO | c.u.c.SongController | User trying to save a Song!
+2019-12-29 | 11:12:00.356 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:00.356 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:00.356 | http-nio-8080-exec-3 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'pop'!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'So Long'!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'ESCPR'!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '175'!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating values: genre: 'pop', title: 'So Long', artist: 'ESCPR', length: '175'!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating genre input...!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validtion for genre successful!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating title input...!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validtion for title successful!
+2019-12-29 | 11:12:00.358 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating artist input...!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validtion for artist successful!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validating length input...!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Validtion for song length successful!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Creating a new Song!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Successfully created a new song!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 |  INFO | c.u.c.SongController | Values for a new Song successfully validated!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.u.d.m.QueryManager | Successfully created the insertSongByUsername query: 'INSERT INTO songs (persons_username, genre, title, artist, length) VALUES (?, ?, ?, ?, ?);'
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 2 with value: 'pop'!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 3 with value: 'So Long'!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 4 with value: 'ESCPR'!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 5 with value: '175'!
+2019-12-29 | 11:12:00.359 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO songs (persons_username, genre, title, artist, length) VALUES ('Stevenartz', 'pop', 'So Long', 'ESCPR', 175);'!
+2019-12-29 | 11:12:00.361 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully inserted new song: 'Song [id=0, genre=pop, title=So Long, artist=ESCPR, length=175]', for person with username: 'Stevenartz'!
+2019-12-29 | 11:12:00.362 | http-nio-8080-exec-3 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 11:12:15.035 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 11:12:15.036 | http-nio-8080-exec-2 |  INFO | c.u.c.SongController | User trying to delete a song!
+2019-12-29 | 11:12:15.036 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:15.036 | http-nio-8080-exec-2 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:15.036 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 11:12:15.037 | http-nio-8080-exec-2 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 11:12:15.038 | http-nio-8080-exec-2 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '63'!
+2019-12-29 | 11:12:15.038 | http-nio-8080-exec-2 | DEBUG | c.u.d.m.QueryManager | Successfully created the deleteSongById query: 'DELETE FROM songs WHERE songId = ?;'
+2019-12-29 | 11:12:15.038 | http-nio-8080-exec-2 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: '63'!
+2019-12-29 | 11:12:15.038 | http-nio-8080-exec-2 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM songs WHERE songId = 63;'!
+2019-12-29 | 11:12:15.041 | http-nio-8080-exec-2 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully deleted song with id: '63'!
+2019-12-29 | 11:12:15.041 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | Song with id: '63'!
+2019-12-29 | 11:12:15.041 | http-nio-8080-exec-2 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 11:12:26.761 | http-nio-8080-exec-4 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 11:12:26.762 | http-nio-8080-exec-4 |  INFO | c.u.c.SongController | User trying to save a Song!
+2019-12-29 | 11:12:26.762 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:26.762 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:26.762 | http-nio-8080-exec-4 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 11:12:26.764 | http-nio-8080-exec-4 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 11:12:26.764 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'pop'!
+2019-12-29 | 11:12:26.764 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'So Long'!
+2019-12-29 | 11:12:26.764 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'ESCPR'!
+2019-12-29 | 11:12:26.764 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '175'!
+2019-12-29 | 11:12:26.764 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating values: genre: 'pop', title: 'So Long', artist: 'ESCPR', length: '175'!
+2019-12-29 | 11:12:26.764 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating genre input...!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for genre successful!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating title input...!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for title successful!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating artist input...!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for artist successful!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating length input...!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for song length successful!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Creating a new Song!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Successfully created a new song!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 |  INFO | c.u.c.SongController | Values for a new Song successfully validated!
+2019-12-29 | 11:12:26.765 | http-nio-8080-exec-4 | DEBUG | c.u.d.m.QueryManager | Successfully created the insertSongByUsername query: 'INSERT INTO songs (persons_username, genre, title, artist, length) VALUES (?, ?, ?, ?, ?);'
+2019-12-29 | 11:12:26.766 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 11:12:26.766 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 2 with value: 'pop'!
+2019-12-29 | 11:12:26.766 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 3 with value: 'So Long'!
+2019-12-29 | 11:12:26.766 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 4 with value: 'ESCPR'!
+2019-12-29 | 11:12:26.766 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 5 with value: '175'!
+2019-12-29 | 11:12:26.766 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO songs (persons_username, genre, title, artist, length) VALUES ('Stevenartz', 'pop', 'So Long', 'ESCPR', 175);'!
+2019-12-29 | 11:12:26.769 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully inserted new song: 'Song [id=0, genre=pop, title=So Long, artist=ESCPR, length=175]', for person with username: 'Stevenartz'!
+2019-12-29 | 11:12:26.769 | http-nio-8080-exec-4 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 11:12:38.340 | main | DEBUG | c.u.c.AuthenticationController | AuthenticationController initialized!
+2019-12-29 | 11:12:38.346 | main | DEBUG | c.u.c.PersonController | PersonController initialized!
+2019-12-29 | 11:12:38.347 | main | DEBUG | c.u.c.SongController | SongController initialized!
+2019-12-29 | 11:12:38.738 | main |  INFO | c.u.m183.M183Application | Application started and running!
+2019-12-29 | 11:12:53.601 | http-nio-8080-exec-1 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 11:12:53.601 | http-nio-8080-exec-1 |  INFO | c.u.c.SongController | User trying to delete a song!
+2019-12-29 | 11:12:53.601 | http-nio-8080-exec-1 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:53.602 | http-nio-8080-exec-1 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:53.602 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 11:12:53.800 | http-nio-8080-exec-1 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 11:12:53.801 | http-nio-8080-exec-1 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '64'!
+2019-12-29 | 11:12:53.801 | http-nio-8080-exec-1 | DEBUG | c.u.d.f.ConnectionFactory | Creating new database connection!
+2019-12-29 | 11:12:53.936 | http-nio-8080-exec-1 | DEBUG | c.u.d.f.ConnectionFactory | Successfully created connection: 'com.mysql.cj.jdbc.ConnectionImpl@7365a3d3', with URL: 'jdbc:mysql://localhost:3306/modul_183?serverTimezone=UTC', Username: 'stefan' and Password: '************'!
+2019-12-29 | 11:12:53.936 | http-nio-8080-exec-1 |  INFO | c.u.d.f.ConnectionFactory | Successfully created a new connection to database!
+2019-12-29 | 11:12:53.937 | http-nio-8080-exec-1 | DEBUG | c.u.d.m.QueryManager | Successfully created the deleteSongById query: 'DELETE FROM songs WHERE songId = ?;'
+2019-12-29 | 11:12:53.952 | http-nio-8080-exec-1 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: '64'!
+2019-12-29 | 11:12:53.952 | http-nio-8080-exec-1 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM songs WHERE songId = 64;'!
+2019-12-29 | 11:12:53.955 | http-nio-8080-exec-1 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully deleted song with id: '64'!
+2019-12-29 | 11:12:53.955 | http-nio-8080-exec-1 | DEBUG | c.u.c.SongController | Song with id: '64'!
+2019-12-29 | 11:12:53.955 | http-nio-8080-exec-1 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 11:12:59.668 | http-nio-8080-exec-3 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 11:12:59.668 | http-nio-8080-exec-3 |  INFO | c.u.c.SongController | User trying to delete a song!
+2019-12-29 | 11:12:59.668 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:59.668 | http-nio-8080-exec-3 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:12:59.668 | http-nio-8080-exec-3 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 11:12:59.672 | http-nio-8080-exec-3 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 11:12:59.672 | http-nio-8080-exec-3 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '64'!
+2019-12-29 | 11:12:59.672 | http-nio-8080-exec-3 | DEBUG | c.u.d.m.QueryManager | Successfully created the deleteSongById query: 'DELETE FROM songs WHERE songId = ?;'
+2019-12-29 | 11:12:59.672 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: '64'!
+2019-12-29 | 11:12:59.672 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM songs WHERE songId = 64;'!
+2019-12-29 | 11:12:59.673 | http-nio-8080-exec-3 | DEBUG | c.uls.dao.songDAO.SongDAO | User tried to delete a song, but no rows have been affected
+2019-12-29 | 11:12:59.673 | http-nio-8080-exec-3 | DEBUG | c.u.c.SongController | Couldn't delete song with id: '64'!
+2019-12-29 | 11:12:59.674 | http-nio-8080-exec-3 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 11:13:05.536 | http-nio-8080-exec-4 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 11:13:05.536 | http-nio-8080-exec-4 |  INFO | c.u.c.SongController | User trying to save a Song!
+2019-12-29 | 11:13:05.536 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:13:05.537 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:13:05.537 | http-nio-8080-exec-4 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 11:13:05.539 | http-nio-8080-exec-4 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 11:13:05.539 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'pop'!
+2019-12-29 | 11:13:05.539 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'So Long'!
+2019-12-29 | 11:13:05.539 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'ESCPR'!
+2019-12-29 | 11:13:05.539 | http-nio-8080-exec-4 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '175'!
+2019-12-29 | 11:13:05.539 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating values: genre: 'pop', title: 'So Long', artist: 'ESCPR', length: '175'!
+2019-12-29 | 11:13:05.539 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating genre input...!
+2019-12-29 | 11:13:05.540 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for genre successful!
+2019-12-29 | 11:13:05.540 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating title input...!
+2019-12-29 | 11:13:05.540 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for title successful!
+2019-12-29 | 11:13:05.540 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating artist input...!
+2019-12-29 | 11:13:05.541 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for artist successful!
+2019-12-29 | 11:13:05.541 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validating length input...!
+2019-12-29 | 11:13:05.541 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Validtion for song length successful!
+2019-12-29 | 11:13:05.541 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Creating a new Song!
+2019-12-29 | 11:13:05.541 | http-nio-8080-exec-4 | DEBUG | c.u.s.RequestHandler | Successfully created a new song!
+2019-12-29 | 11:13:05.542 | http-nio-8080-exec-4 |  INFO | c.u.c.SongController | Values for a new Song successfully validated!
+2019-12-29 | 11:13:05.542 | http-nio-8080-exec-4 | DEBUG | c.u.d.m.QueryManager | Successfully created the insertSongByUsername query: 'INSERT INTO songs (persons_username, genre, title, artist, length) VALUES (?, ?, ?, ?, ?);'
+2019-12-29 | 11:13:05.542 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: 'Stevenartz'!
+2019-12-29 | 11:13:05.542 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 2 with value: 'pop'!
+2019-12-29 | 11:13:05.542 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 3 with value: 'So Long'!
+2019-12-29 | 11:13:05.542 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 4 with value: 'ESCPR'!
+2019-12-29 | 11:13:05.542 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 5 with value: '175'!
+2019-12-29 | 11:13:05.542 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO songs (persons_username, genre, title, artist, length) VALUES ('Stevenartz', 'pop', 'So Long', 'ESCPR', 175);'!
+2019-12-29 | 11:13:05.545 | http-nio-8080-exec-4 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully inserted new song: 'Song [id=0, genre=pop, title=So Long, artist=ESCPR, length=175]', for person with username: 'Stevenartz'!
+2019-12-29 | 11:13:05.545 | http-nio-8080-exec-4 | DEBUG | c.u.c.SongController | --- End of Request ---
+2019-12-29 | 11:14:18.699 | http-nio-8080-exec-7 | DEBUG | c.u.c.SongController | --- New Request ---
+2019-12-29 | 11:14:18.699 | http-nio-8080-exec-7 |  INFO | c.u.c.SongController | User trying to delete a song!
+2019-12-29 | 11:14:18.699 | http-nio-8080-exec-7 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:14:18.699 | http-nio-8080-exec-7 | DEBUG | c.u.s.RequestHandler | Authorization found: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdGV2ZW5hcnR6IiwiZXhwIjoxNTc3NjE1NDYzLCJpYXQiOjE1Nzc2MTE4NjN9.mAbZKngCuj7wXtIry9-Ny_7V2LxeoiC4tm8UBnpXNWkJqZlxbx6gPKB6r6FcmIl--n-9d3rnsjG1Tu1tT7JOfA'!
+2019-12-29 | 11:14:18.700 | http-nio-8080-exec-7 | DEBUG | c.uls.security.JWTHelper | Verifying JWT!
+2019-12-29 | 11:14:18.702 | http-nio-8080-exec-7 | DEBUG | c.uls.security.JWTHelper | Verification successful!
+2019-12-29 | 11:14:18.702 | http-nio-8080-exec-7 | DEBUG | c.u.security.HTMLEscaper | Removing all HTML tags of input: '65'!
+2019-12-29 | 11:14:18.702 | http-nio-8080-exec-7 | DEBUG | c.u.d.m.QueryManager | Successfully created the deleteSongById query: 'DELETE FROM songs WHERE songId = ?;'
+2019-12-29 | 11:14:18.702 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Setting parameter 1 with value: '65'!
+2019-12-29 | 11:14:18.702 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Statement: 'com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM songs WHERE songId = 65;'!
+2019-12-29 | 11:14:18.705 | http-nio-8080-exec-7 | DEBUG | c.uls.dao.songDAO.SongDAO | Successfully deleted song with id: '65'!
+2019-12-29 | 11:14:18.705 | http-nio-8080-exec-7 | DEBUG | c.u.c.SongController | Song with id: '65'!
+2019-12-29 | 11:14:18.706 | http-nio-8080-exec-7 | DEBUG | c.u.c.SongController | --- End of Request ---
