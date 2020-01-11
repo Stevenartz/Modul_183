@@ -5,6 +5,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -49,7 +50,7 @@ public class PersonController {
 	 * @return Either null or the person found.
 	 */
 	@CrossOrigin(origins = "http://localhost:3000")
-	@RequestMapping(value = "/getPersonByUsername", method = RequestMethod.GET)
+	@GetMapping(value = "/getPersonByUsername")
 	public Person getPersonByUsername(@RequestHeader Map<String, String> headers) {
 		LOGGER.debug("--- New Request ---");
 		LOGGER.info("User trying to get a Person by his username!");

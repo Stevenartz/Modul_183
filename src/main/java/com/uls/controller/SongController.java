@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -50,7 +52,7 @@ public class SongController {
 	 * @return true, if it was successful, false if not.
 	 */
 	@CrossOrigin(origins = "http://localhost:3000")
-	@RequestMapping(value = "/saveSong", method = RequestMethod.POST)
+	@PostMapping(value = "/saveSong")
 	public boolean saveSong(@RequestHeader Map<String, String> headers) {
 		LOGGER.debug("--- New Request ---");
 		LOGGER.info("User trying to save a Song!");
@@ -92,7 +94,7 @@ public class SongController {
 	 * @return Either null or the songs found.
 	 */
 	@CrossOrigin(origins = "http://localhost:3000")
-	@RequestMapping(value = "/getSongsByUsername", method = RequestMethod.GET)
+	@GetMapping(value = "/getSongsByUsername")
 	public List<Song> getSongsByUsername(@RequestHeader Map<String, String> headers) {
 		LOGGER.debug("--- New Request ---");
 		LOGGER.info("User trying to get a List with all his songs!");
